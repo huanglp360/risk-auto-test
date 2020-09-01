@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://code.alibabatech.com/schema/dubbo
+        http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+    <!-- 	<bean id="demoService" class="com.hh.DubboTest.DemoServiceImpl" />
+        <dubbo:application name="wuxi-dubbo-provider" />
+        <dubbo:registry address="zookeeper://172.16.2.212:2181" />
+        用dubbo协议在20880端口暴露服务
+        <dubbo:protocol name="dubbo" port="20880" />
+        声明需要暴露的服务接口
+        <dubbo:service interface="com.hh.DubboTest.DemoService"
+            ref="demoService" /> -->
+
+    <!-- <dubbo:application name="frs-core" />-->
+
+    <!-- dubbo间的直连 -->
+    <dubbo:registry address="N/A"/>
+
+
+    <dubbo:application name="vpp-core"/>
+    <!--<dubbo:reference id ="SysTagInfoService" interface="com.byxf.frs.service.SysTagInfoService" url="dubbo://172.16.2.212:29928"  />-->
+    <dubbo:reference id="SuperTestInterface" interface="com.byxf.vpp.api.service.SuperTestInterface"
+                     url="dubbo://172.16.2.217:29831" timeout="20000"/>
+    <dubbo:reference id="CreditService" interface="com.byxf.rfs.api.service.CreditService"
+                     url="dubbo://11.28.1.169:20829" timeout="20000"/>
+
+<!--    <dubbo:reference id="SuperInterface" interface="com.byxf.vpp.core.flow.SuperInterface"-->
+<!--                     url="dubbo://11.28.2.137:29831"/>-->
+
+
+    <dubbo:consumer check="false"/>
+
+</beans>

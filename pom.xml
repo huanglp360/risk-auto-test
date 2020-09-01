@@ -1,0 +1,388 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.bytest</groupId>
+    <artifactId>risk-auto-test</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>bytest</name>
+    <description>test</description>
+<!--    <packaging>jar</packaging>-->
+
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.2.6.RELEASE</version>
+
+    </parent>
+
+
+    <properties>
+        <java.version>1.8</java.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <spring-boot.version>2.2.6.RELEASE</spring-boot.version>
+        <main.basedir>${basedir}/../..</main.basedir>
+    </properties>
+
+
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+
+        </dependency>
+        <dependency>
+            <groupId>org.mybatis.spring.boot</groupId>
+            <artifactId>mybatis-spring-boot-starter</artifactId>
+            <version>2.1.1</version>
+
+        </dependency>
+
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-aop</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid-spring-boot-starter</artifactId>
+            <version>1.1.0</version>
+
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba.boot</groupId>
+            <artifactId>dubbo-spring-boot-starter</artifactId>
+            <version>0.2.0</version>
+
+        </dependency>
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+
+
+        </dependency>
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi</artifactId>
+            <version>4.1.0</version>
+
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.apache.poi/poi-ooxml -->
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi-ooxml</artifactId>
+            <version>4.1.0</version>
+
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>1.2.62</version>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid</artifactId>
+            <version>1.1.10</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/com.baidu.aip/java-sdk -->
+        <dependency>
+            <groupId>com.baidu.aip</groupId>
+            <artifactId>java-sdk</artifactId>
+            <version>4.12.0</version>
+
+        </dependency>
+        <!--支持JSP依赖-->
+        <!-- 若WEB项目使用JSP文件，引用以下依赖包 -->
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>jstl</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.tomcat.embed</groupId>
+            <artifactId>tomcat-embed-jasper</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-tomcat</artifactId>
+            <scope>provided</scope>
+        </dependency>
+
+
+        <!--        <dependency>-->
+<!--            <groupId>org.testng</groupId>-->
+<!--            <artifactId>testng</artifactId>-->
+<!--            <version>7.1.0</version>-->
+<!--            <scope>test</scope>-->
+<!--        </dependency>-->
+<!--        <dependency>-->
+<!--            <groupId>org.testng</groupId>-->
+<!--            <artifactId>testng</artifactId>-->
+<!--            <version>7.1.0</version>-->
+<!--            <scope>compile</scope>-->
+<!--        </dependency>-->
+
+
+        <!-- https://mvnrepository.com/artifact/org.apache.httpcomponents/httpclient -->
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpclient</artifactId>
+            <version>4.5.2</version>
+        </dependency>
+        <!--redis-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-redis</artifactId>
+
+        </dependency>
+
+        <dependency>
+            <groupId>redis.clients</groupId>
+            <artifactId>jedis</artifactId>
+
+            <!--            <version>2.7.3</version>-->
+        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>org.apache.poi</groupId>-->
+<!--            <artifactId>poi</artifactId>-->
+<!--            <version>4.1.0</version>-->
+<!--        </dependency>-->
+<!--        hbase相关-->
+<!--        <dependency>-->
+<!--            <groupId>org.apache.hbase</groupId>-->
+<!--            <artifactId>hbase-client</artifactId>-->
+<!--            <version>1.1.2</version>-->
+
+<!--        </dependency>-->
+<!--        &lt;!&ndash; https://mvnrepository.com/artifact/org.springframework.data/spring-data-hadoop-hbase &ndash;&gt;-->
+<!--        <dependency>-->
+<!--            <groupId>org.springframework.data</groupId>-->
+<!--            <artifactId>spring-data-hadoop-hbase</artifactId>-->
+<!--            <version>2.5.0.RELEASE</version>-->
+<!--        </dependency>-->
+<!--        <dependency>-->
+<!--            <groupId>org.springframework.data</groupId>-->
+<!--            <artifactId>spring-data-hadoop</artifactId>-->
+<!--            <version>2.5.0.RELEASE</version>-->
+
+<!--        </dependency>-->
+        <dependency>
+            <groupId>com.byxf.vpp</groupId>
+            <artifactId>vpp-api</artifactId>
+            <version>0.1.4-h5-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.byxf.risk-front</groupId>
+            <artifactId>risk-front-api</artifactId>
+            <version>0.0.1.2-queryCreditResult-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.bsb.ics</groupId>
+            <artifactId>ics-api</artifactId>
+            <version>0.0.7-SNAPSHOT</version>
+        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>com.smy.framework</groupId>-->
+<!--            <artifactId>smyframework-base</artifactId>-->
+<!--            <version>0.0.9-SNAPSHOT</version>-->
+
+<!--        </dependency>-->
+
+
+    </dependencies>
+
+
+
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${spring-boot.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <build>
+        <finalName>auto-test</finalName>
+
+        <plugins>
+<!--            <plugin>-->
+<!--                <groupId>org.apache.maven.plugins</groupId>-->
+<!--                <artifactId>maven-compiler-plugin</artifactId>-->
+<!--                <version>3.8.1</version>-->
+<!--                <configuration>-->
+<!--                    <source>1.8</source>-->
+<!--                    <target>1.8</target>-->
+<!--                    <encoding>UTF-8</encoding>-->
+<!--                </configuration>-->
+<!--            </plugin>-->
+            <!--配置jar包启动-->
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>1.4.2.RELEASE</version>
+                <configuration>
+                    <mainClass>com.bytest.autotest.AutoTestApplication</mainClass>
+                </configuration>
+<!--                <executions>-->
+<!--                    <execution>-->
+<!--                        <goals>-->
+<!--                            <goal>repackage</goal>-->
+<!--                        </goals>-->
+<!--                    </execution>-->
+<!--                </executions>-->
+                <dependencies>
+                    <!-- spring热部署 -->
+<!--                    <dependency>-->
+<!--                        <groupId>org.springframework</groupId>-->
+<!--                        <artifactId>springloaded</artifactId>-->
+<!--                        <version>1.2.6.RELEASE</version>-->
+<!--                    </dependency>-->
+                </dependencies>
+
+            </plugin>
+
+            <!-- 忽略无web.xml警告 -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <configuration>
+                    <failOnMissingWebXml>false</failOnMissingWebXml>
+                </configuration>
+            </plugin>
+
+
+
+
+<!--            <plugin>-->
+<!--                <groupId>org.springframework.boot</groupId>-->
+<!--                <artifactId>spring-boot-maven-plugin</artifactId>-->
+<!--                <version>2.2.6.RELEASE</version>-->
+<!--                <configuration>-->
+<!--                    <mainClass>com.bytest.autotest.AutoTestApplication</mainClass>-->
+<!--                </configuration>-->
+
+<!--            </plugin>-->
+
+<!--            <plugin>-->
+<!--                &lt;!&ndash;Mybatis-generator插件,用于自动生成Mapper和POJO&ndash;&gt;-->
+<!--                <groupId>org.mybatis.generator</groupId>-->
+<!--                <artifactId>mybatis-generator-maven-plugin</artifactId>-->
+<!--                <version>1.3.2</version>-->
+<!--                <configuration>-->
+<!--                    &lt;!&ndash;配置文件的位置&ndash;&gt;-->
+<!--                    <configurationFile>E:\1-工作项目\byxf-code\risk-auto-test\src\main\resources\generateXML.xml</configurationFile>-->
+<!--                    <verbose>true</verbose>-->
+<!--                    <overwrite>true</overwrite>-->
+<!--                </configuration>-->
+<!--                <executions>-->
+<!--                    <execution>-->
+<!--                        <id>Generate MyBatis Artifacts</id>-->
+<!--                        <goals>-->
+<!--                            <goal>generate</goal>-->
+<!--                        </goals>-->
+<!--                    </execution>-->
+<!--                </executions>-->
+<!--                <dependencies>-->
+<!--                    <dependency>-->
+<!--                        <groupId>org.mybatis.generator</groupId>-->
+<!--                        <artifactId>mybatis-generator-core</artifactId>-->
+<!--                        <version>1.3.2</version>-->
+<!--                    </dependency>-->
+
+<!--                </dependencies>-->
+<!--            </plugin>-->
+        </plugins>
+        <resources>
+
+            <resource>
+                <directory>src/main/java</directory>
+                <includes>
+                    <include>**/**</include>
+                </includes>
+            </resource>
+
+            <!--将jsp打包-->
+            <resource>
+                <!-- 指定resources插件处理哪个目录下的资源文件 -->
+                <directory>src/main/webapp</directory>
+                <!--注意此次必须要放在此目录下才能被访问到-->
+                <targetPath>META-INF/resources</targetPath>
+                <includes>
+                    <include>**/**</include>
+                </includes>
+                <filtering>false</filtering>
+            </resource>
+            <!--编译时将resources打包-->
+            <resource>
+                <directory>src/main/resources</directory>
+                <!-- 是否替换@xx@表示的maven properties属性值 -->
+                <filtering>false</filtering>
+                <includes>
+                    <include>**/**</include>
+                </includes>
+            </resource>
+            <!--mybatis文件的XML，加载到编译文件中-->
+<!--            <resource>-->
+<!--                <directory>src/main/resources</directory>-->
+<!--                <includes>-->
+<!--                    <include>mybatis/*.xml</include>-->
+<!--                </includes>-->
+<!--            </resource>-->
+
+        </resources>
+
+<!--        <resources>-->
+<!--            <resource>-->
+<!--                <directory>src/main/resources</directory>-->
+<!--                <includes>-->
+<!--                    <include>**/**</include>-->
+<!--                </includes>-->
+<!--            </resource>-->
+<!--            <resource>-->
+<!--                <directory>src/main/weapp</directory>-->
+<!--                <targetPath>META-INF/resources</targetPath>-->
+<!--                <includes>-->
+<!--                    <include>**/**</include>-->
+<!--                </includes>-->
+<!--            </resource>-->
+<!--            <resource>-->
+<!--                <directory>data</directory>-->
+<!--                <targetPath>META-INF</targetPath>-->
+<!--                <includes>-->
+<!--                    <include>**/**</include>-->
+<!--                </includes>-->
+<!--            </resource>-->
+<!--        </resources>-->
+    </build>
+
+</project>

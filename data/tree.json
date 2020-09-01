@@ -1,0 +1,61 @@
+[
+
+	{
+	"id":1,
+	"text":"业务测试请求",
+	"children" : [
+
+					{
+					"text" : "b2c",
+					"checked" : false,
+					"state" : "closed",
+					"children" : [{
+									"text" : "360借钱",
+									"url":"threeLoan",
+									"iconCls":"icon-manager"
+									}
+								]
+	
+					},
+					{
+					"text" : "b2b",
+					"checked" : false,
+					"state" : "closed",
+					"children" : [{
+									"text" : "乐信导流",
+									"url":"lexin",
+									"iconCls":"icon-manager"
+									},
+									{
+									"text" : "橘子分期",
+									"url":"jzfq",
+									"iconCls":"icon-manager"
+									}
+								]
+					},
+		{
+			"text" : "数据管理",
+			"checked" : false,
+			"state" : "closed",
+			"children" :[
+				{
+					"text":"测试数据管理",
+					"url":"testdata",
+					"iconCls":"icon-manager"
+				}
+			]},
+		{
+			"text" : "dcp全量测试",
+			"checked" : false,
+			"state" : "closed",
+			"children" :[
+				{
+					"text":"全量测试请求",
+					"url":"alltest",
+					"iconCls":"icon-manager"
+				}
+			]}
+
+		]
+	}
+	]

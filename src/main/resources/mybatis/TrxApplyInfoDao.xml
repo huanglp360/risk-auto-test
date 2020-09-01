@@ -1,0 +1,613 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bytest.autotest.dao.TrxApplyInfoDao">
+
+    <resultMap type="com.bytest.autotest.domain.TrxApplyInfo" id="TrxApplyInfoMap">
+        <result property="applyNo" column="APPLY_NO" jdbcType="VARCHAR"/>
+        <result property="applySource" column="APPLY_SOURCE" jdbcType="VARCHAR"/>
+        <result property="prodNo" column="PROD_NO" jdbcType="VARCHAR"/>
+        <result property="prodSubNo" column="PROD_SUB_NO" jdbcType="VARCHAR"/>
+        <result property="applyStatus" column="APPLY_STATUS" jdbcType="VARCHAR"/>
+        <result property="syndicatedLoan" column="SYNDICATED_LOAN" jdbcType="VARCHAR"/>
+        <result property="channalCode" column="CHANNAL_CODE" jdbcType="VARCHAR"/>
+        <result property="applyResult" column="APPLY_RESULT" jdbcType="VARCHAR"/>
+        <result property="applyResultDesc" column="APPLY_RESULT_DESC" jdbcType="VARCHAR"/>
+        <result property="artificialFlag" column="ARTIFICIAL_FLAG" jdbcType="VARCHAR"/>
+        <result property="approveType" column="APPROVE_TYPE" jdbcType="VARCHAR"/>
+        <result property="approveResult" column="APPROVE_RESULT" jdbcType="VARCHAR"/>
+        <result property="awordResultCode" column="AWORD_RESULT_CODE" jdbcType="VARCHAR"/>
+        <result property="mobilePhoneNo" column="MOBILE_PHONE_NO" jdbcType="VARCHAR"/>
+        <result property="custNo" column="CUST_NO" jdbcType="VARCHAR"/>
+        <result property="custName" column="CUST_NAME" jdbcType="VARCHAR"/>
+        <result property="custSex" column="CUST_SEX" jdbcType="VARCHAR"/>
+        <result property="custAge" column="CUST_AGE" jdbcType="VARCHAR"/>
+        <result property="maritalStatus" column="MARITAL_STATUS" jdbcType="VARCHAR"/>
+        <result property="houseSituation" column="HOUSE_SITUATION" jdbcType="VARCHAR"/>
+        <result property="bankCardType" column="BANK_CARD_TYPE" jdbcType="VARCHAR"/>
+        <result property="bankCardNo" column="BANK_CARD_NO" jdbcType="VARCHAR"/>
+        <result property="idType" column="ID_TYPE" jdbcType="VARCHAR"/>
+        <result property="idNo" column="ID_NO" jdbcType="VARCHAR"/>
+        <result property="firstIdProvinceCode" column="FIRST_ID_PROVINCE_CODE" jdbcType="VARCHAR"/>
+        <result property="firstIdProvince" column="FIRST_ID_PROVINCE" jdbcType="VARCHAR"/>
+        <result property="firstIdCityCode" column="FIRST_ID_CITY_CODE" jdbcType="VARCHAR"/>
+        <result property="firstIdCity" column="FIRST_ID_CITY" jdbcType="VARCHAR"/>
+        <result property="idFrontImgUrl" column="ID_FRONT_IMG_URL" jdbcType="VARCHAR"/>
+        <result property="idBackImgUrl" column="ID_BACK_IMG_URL" jdbcType="VARCHAR"/>
+        <result property="livingImgurlOne" column="LIVING_IMGURL_ONE" jdbcType="VARCHAR"/>
+        <result property="degree" column="DEGREE" jdbcType="VARCHAR"/>
+        <result property="schoolName" column="SCHOOL_NAME" jdbcType="VARCHAR"/>
+        <result property="majorName" column="MAJOR_NAME" jdbcType="VARCHAR"/>
+        <result property="remark" column="REMARK" jdbcType="VARCHAR"/>
+        <result property="token" column="TOKEN" jdbcType="VARCHAR"/>
+        <result property="createDate" column="CREATE_DATE" jdbcType="NUMERIC"/>
+        <result property="createTime" column="CREATE_TIME" jdbcType="VARCHAR"/>
+        <result property="updateDate" column="UPDATE_DATE" jdbcType="NUMERIC"/>
+        <result property="updateTime" column="UPDATE_TIME" jdbcType="VARCHAR"/>
+        <result property="version" column="VERSION" jdbcType="NUMERIC"/>
+        <result property="artificialDate" column="ARTIFICIAL_DATE" jdbcType="NUMERIC"/>
+        <result property="artificialTime" column="ARTIFICIAL_TIME" jdbcType="VARCHAR"/>
+        <result property="awordResult" column="AWORD_RESULT" jdbcType="VARCHAR"/>
+        <result property="riskPricing" column="RISK_PRICING" jdbcType="VARCHAR"/>
+        <result property="caseType" column="CASE_TYPE" jdbcType="VARCHAR"/>
+        <result property="applyRandomNo" column="APPLY_RANDOM_NO" jdbcType="VARCHAR"/>
+        <result property="piid" column="PIID" jdbcType="VARCHAR"/>
+        <result property="queueDate" column="QUEUE_DATE" jdbcType="NUMERIC"/>
+        <result property="queueTime" column="QUEUE_TIME" jdbcType="VARCHAR"/>
+        <result property="promotionChannel" column="PROMOTION_CHANNEL" jdbcType="VARCHAR"/>
+        <result property="applyId" column="APPLY_ID" jdbcType="VARCHAR"/>
+        <result property="manualCauseCode" column="MANUAL_CAUSE_CODE" jdbcType="VARCHAR"/>
+        <result property="imageEnv" column="IMAGE_ENV" jdbcType="VARCHAR"/>
+        <result property="finalresultCompany" column="FINALRESULT_COMPANY" jdbcType="VARCHAR"/>
+        <result property="approveCompany" column="APPROVE_COMPANY" jdbcType="VARCHAR"/>
+        <result property="manualApproveLevel" column="MANUAL_APPROVE_LEVEL" jdbcType="VARCHAR"/>
+        <result property="intervalDays" column="INTERVAL_DAYS" jdbcType="INTEGER"/>
+        <result property="applyTime" column="APPLY_TIME" jdbcType="TIMESTAMP"/>
+        <result property="accessChannel" column="ACCESS_CHANNEL" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <!--查询单个-->
+    <select id="queryById" resultMap="TrxApplyInfoMap">
+        select APPLY_NO,
+               APPLY_SOURCE,
+               PROD_NO,
+               PROD_SUB_NO,
+               APPLY_STATUS,
+               SYNDICATED_LOAN,
+               CHANNAL_CODE,
+               APPLY_RESULT,
+               APPLY_RESULT_DESC,
+               ARTIFICIAL_FLAG,
+               APPROVE_TYPE,
+               APPROVE_RESULT,
+               AWORD_RESULT_CODE,
+               MOBILE_PHONE_NO,
+               CUST_NO,
+               CUST_NAME,
+               CUST_SEX,
+               CUST_AGE,
+               MARITAL_STATUS,
+               HOUSE_SITUATION,
+               BANK_CARD_TYPE,
+               BANK_CARD_NO,
+               ID_TYPE,
+               ID_NO,
+               FIRST_ID_PROVINCE_CODE,
+               FIRST_ID_PROVINCE,
+               FIRST_ID_CITY_CODE,
+               FIRST_ID_CITY,
+               ID_FRONT_IMG_URL,
+               ID_BACK_IMG_URL,
+               LIVING_IMGURL_ONE,
+               DEGREE,
+               SCHOOL_NAME,
+               MAJOR_NAME,
+               REMARK,
+               TOKEN,
+               CREATE_DATE,
+               CREATE_TIME,
+               UPDATE_DATE,
+               UPDATE_TIME,
+               VERSION,
+               ARTIFICIAL_DATE,
+               ARTIFICIAL_TIME,
+               AWORD_RESULT,
+               RISK_PRICING,
+               CASE_TYPE,
+               APPLY_RANDOM_NO,
+               PIID,
+               QUEUE_DATE,
+               QUEUE_TIME,
+               PROMOTION_CHANNEL,
+               APPLY_ID,
+               MANUAL_CAUSE_CODE,
+               IMAGE_ENV,
+               FINALRESULT_COMPANY,
+               APPROVE_COMPANY,
+               MANUAL_APPROVE_LEVEL,
+               INTERVAL_DAYS,
+               APPLY_TIME,
+               ACCESS_CHANNEL
+        from crs.trx_apply_info
+        where APPLY_NO = #{applyNo}
+    </select>
+
+    <!--查询指定行数据-->
+    <select id="queryAllByLimit" resultMap="TrxApplyInfoMap">
+        select APPLY_NO,
+               APPLY_SOURCE,
+               PROD_NO,
+               PROD_SUB_NO,
+               APPLY_STATUS,
+               SYNDICATED_LOAN,
+               CHANNAL_CODE,
+               APPLY_RESULT,
+               APPLY_RESULT_DESC,
+               ARTIFICIAL_FLAG,
+               APPROVE_TYPE,
+               APPROVE_RESULT,
+               AWORD_RESULT_CODE,
+               MOBILE_PHONE_NO,
+               CUST_NO,
+               CUST_NAME,
+               CUST_SEX,
+               CUST_AGE,
+               MARITAL_STATUS,
+               HOUSE_SITUATION,
+               BANK_CARD_TYPE,
+               BANK_CARD_NO,
+               ID_TYPE,
+               ID_NO,
+               FIRST_ID_PROVINCE_CODE,
+               FIRST_ID_PROVINCE,
+               FIRST_ID_CITY_CODE,
+               FIRST_ID_CITY,
+               ID_FRONT_IMG_URL,
+               ID_BACK_IMG_URL,
+               LIVING_IMGURL_ONE,
+               DEGREE,
+               SCHOOL_NAME,
+               MAJOR_NAME,
+               REMARK,
+               TOKEN,
+               CREATE_DATE,
+               CREATE_TIME,
+               UPDATE_DATE,
+               UPDATE_TIME,
+               VERSION,
+               ARTIFICIAL_DATE,
+               ARTIFICIAL_TIME,
+               AWORD_RESULT,
+               RISK_PRICING,
+               CASE_TYPE,
+               APPLY_RANDOM_NO,
+               PIID,
+               QUEUE_DATE,
+               QUEUE_TIME,
+               PROMOTION_CHANNEL,
+               APPLY_ID,
+               MANUAL_CAUSE_CODE,
+               IMAGE_ENV,
+               FINALRESULT_COMPANY,
+               APPROVE_COMPANY,
+               MANUAL_APPROVE_LEVEL,
+               INTERVAL_DAYS,
+               APPLY_TIME,
+               ACCESS_CHANNEL
+        from crs.trx_apply_info
+        limit #{offset}, #{limit}
+    </select>
+
+    <!--通过实体作为筛选条件查询-->
+    <select id="queryAll" resultMap="TrxApplyInfoMap">
+        select
+        APPLY_NO, APPLY_SOURCE, PROD_NO, PROD_SUB_NO, APPLY_STATUS, SYNDICATED_LOAN, CHANNAL_CODE, APPLY_RESULT,
+        APPLY_RESULT_DESC, ARTIFICIAL_FLAG, APPROVE_TYPE, APPROVE_RESULT, AWORD_RESULT_CODE, MOBILE_PHONE_NO, CUST_NO,
+        CUST_NAME, CUST_SEX, CUST_AGE, MARITAL_STATUS, HOUSE_SITUATION, BANK_CARD_TYPE, BANK_CARD_NO, ID_TYPE, ID_NO,
+        FIRST_ID_PROVINCE_CODE, FIRST_ID_PROVINCE, FIRST_ID_CITY_CODE, FIRST_ID_CITY, ID_FRONT_IMG_URL, ID_BACK_IMG_URL,
+        LIVING_IMGURL_ONE, DEGREE, SCHOOL_NAME, MAJOR_NAME, REMARK, TOKEN, CREATE_DATE, CREATE_TIME, UPDATE_DATE,
+        UPDATE_TIME, VERSION, ARTIFICIAL_DATE, ARTIFICIAL_TIME, AWORD_RESULT, RISK_PRICING, CASE_TYPE, APPLY_RANDOM_NO,
+        PIID, QUEUE_DATE, QUEUE_TIME, PROMOTION_CHANNEL, APPLY_ID, MANUAL_CAUSE_CODE, IMAGE_ENV, FINALRESULT_COMPANY,
+        APPROVE_COMPANY, MANUAL_APPROVE_LEVEL, INTERVAL_DAYS, APPLY_TIME, ACCESS_CHANNEL
+        from crs.trx_apply_info
+        <where>
+            <if test="applyNo != null and applyNo != ''">
+                and APPLY_NO = #{applyNo}
+            </if>
+            <if test="applySource != null and applySource != ''">
+                and APPLY_SOURCE = #{applySource}
+            </if>
+            <if test="prodNo != null and prodNo != ''">
+                and PROD_NO = #{prodNo}
+            </if>
+            <if test="prodSubNo != null and prodSubNo != ''">
+                and PROD_SUB_NO = #{prodSubNo}
+            </if>
+            <if test="applyStatus != null and applyStatus != ''">
+                and APPLY_STATUS = #{applyStatus}
+            </if>
+            <if test="syndicatedLoan != null and syndicatedLoan != ''">
+                and SYNDICATED_LOAN = #{syndicatedLoan}
+            </if>
+            <if test="channalCode != null and channalCode != ''">
+                and CHANNAL_CODE = #{channalCode}
+            </if>
+            <if test="applyResult != null and applyResult != ''">
+                and APPLY_RESULT = #{applyResult}
+            </if>
+            <if test="applyResultDesc != null and applyResultDesc != ''">
+                and APPLY_RESULT_DESC = #{applyResultDesc}
+            </if>
+            <if test="artificialFlag != null and artificialFlag != ''">
+                and ARTIFICIAL_FLAG = #{artificialFlag}
+            </if>
+            <if test="approveType != null and approveType != ''">
+                and APPROVE_TYPE = #{approveType}
+            </if>
+            <if test="approveResult != null and approveResult != ''">
+                and APPROVE_RESULT = #{approveResult}
+            </if>
+            <if test="awordResultCode != null and awordResultCode != ''">
+                and AWORD_RESULT_CODE = #{awordResultCode}
+            </if>
+            <if test="mobilePhoneNo != null and mobilePhoneNo != ''">
+                and MOBILE_PHONE_NO = #{mobilePhoneNo}
+            </if>
+            <if test="custNo != null and custNo != ''">
+                and CUST_NO = #{custNo}
+            </if>
+            <if test="custName != null and custName != ''">
+                and CUST_NAME = #{custName}
+            </if>
+            <if test="custSex != null and custSex != ''">
+                and CUST_SEX = #{custSex}
+            </if>
+            <if test="custAge != null and custAge != ''">
+                and CUST_AGE = #{custAge}
+            </if>
+            <if test="maritalStatus != null and maritalStatus != ''">
+                and MARITAL_STATUS = #{maritalStatus}
+            </if>
+            <if test="houseSituation != null and houseSituation != ''">
+                and HOUSE_SITUATION = #{houseSituation}
+            </if>
+            <if test="bankCardType != null and bankCardType != ''">
+                and BANK_CARD_TYPE = #{bankCardType}
+            </if>
+            <if test="bankCardNo != null and bankCardNo != ''">
+                and BANK_CARD_NO = #{bankCardNo}
+            </if>
+            <if test="idType != null and idType != ''">
+                and ID_TYPE = #{idType}
+            </if>
+            <if test="idNo != null and idNo != ''">
+                and ID_NO = #{idNo}
+            </if>
+            <if test="firstIdProvinceCode != null and firstIdProvinceCode != ''">
+                and FIRST_ID_PROVINCE_CODE = #{firstIdProvinceCode}
+            </if>
+            <if test="firstIdProvince != null and firstIdProvince != ''">
+                and FIRST_ID_PROVINCE = #{firstIdProvince}
+            </if>
+            <if test="firstIdCityCode != null and firstIdCityCode != ''">
+                and FIRST_ID_CITY_CODE = #{firstIdCityCode}
+            </if>
+            <if test="firstIdCity != null and firstIdCity != ''">
+                and FIRST_ID_CITY = #{firstIdCity}
+            </if>
+            <if test="idFrontImgUrl != null and idFrontImgUrl != ''">
+                and ID_FRONT_IMG_URL = #{idFrontImgUrl}
+            </if>
+            <if test="idBackImgUrl != null and idBackImgUrl != ''">
+                and ID_BACK_IMG_URL = #{idBackImgUrl}
+            </if>
+            <if test="livingImgurlOne != null and livingImgurlOne != ''">
+                and LIVING_IMGURL_ONE = #{livingImgurlOne}
+            </if>
+            <if test="degree != null and degree != ''">
+                and DEGREE = #{degree}
+            </if>
+            <if test="schoolName != null and schoolName != ''">
+                and SCHOOL_NAME = #{schoolName}
+            </if>
+            <if test="majorName != null and majorName != ''">
+                and MAJOR_NAME = #{majorName}
+            </if>
+            <if test="remark != null and remark != ''">
+                and REMARK = #{remark}
+            </if>
+            <if test="token != null and token != ''">
+                and TOKEN = #{token}
+            </if>
+            <if test="createDate != null">
+                and CREATE_DATE = #{createDate}
+            </if>
+            <if test="createTime != null and createTime != ''">
+                and CREATE_TIME = #{createTime}
+            </if>
+            <if test="updateDate != null">
+                and UPDATE_DATE = #{updateDate}
+            </if>
+            <if test="updateTime != null and updateTime != ''">
+                and UPDATE_TIME = #{updateTime}
+            </if>
+            <if test="version != null">
+                and VERSION = #{version}
+            </if>
+            <if test="artificialDate != null">
+                and ARTIFICIAL_DATE = #{artificialDate}
+            </if>
+            <if test="artificialTime != null and artificialTime != ''">
+                and ARTIFICIAL_TIME = #{artificialTime}
+            </if>
+            <if test="awordResult != null and awordResult != ''">
+                and AWORD_RESULT = #{awordResult}
+            </if>
+            <if test="riskPricing != null and riskPricing != ''">
+                and RISK_PRICING = #{riskPricing}
+            </if>
+            <if test="caseType != null and caseType != ''">
+                and CASE_TYPE = #{caseType}
+            </if>
+            <if test="applyRandomNo != null and applyRandomNo != ''">
+                and APPLY_RANDOM_NO = #{applyRandomNo}
+            </if>
+            <if test="piid != null and piid != ''">
+                and PIID = #{piid}
+            </if>
+            <if test="queueDate != null">
+                and QUEUE_DATE = #{queueDate}
+            </if>
+            <if test="queueTime != null and queueTime != ''">
+                and QUEUE_TIME = #{queueTime}
+            </if>
+            <if test="promotionChannel != null and promotionChannel != ''">
+                and PROMOTION_CHANNEL = #{promotionChannel}
+            </if>
+            <if test="applyId != null and applyId != ''">
+                and APPLY_ID = #{applyId}
+            </if>
+            <if test="manualCauseCode != null and manualCauseCode != ''">
+                and MANUAL_CAUSE_CODE = #{manualCauseCode}
+            </if>
+            <if test="imageEnv != null and imageEnv != ''">
+                and IMAGE_ENV = #{imageEnv}
+            </if>
+            <if test="finalresultCompany != null and finalresultCompany != ''">
+                and FINALRESULT_COMPANY = #{finalresultCompany}
+            </if>
+            <if test="approveCompany != null and approveCompany != ''">
+                and APPROVE_COMPANY = #{approveCompany}
+            </if>
+            <if test="manualApproveLevel != null and manualApproveLevel != ''">
+                and MANUAL_APPROVE_LEVEL = #{manualApproveLevel}
+            </if>
+            <if test="intervalDays != null">
+                and INTERVAL_DAYS = #{intervalDays}
+            </if>
+            <if test="applyTime != null">
+                and APPLY_TIME = #{applyTime}
+            </if>
+            <if test="accessChannel != null and accessChannel != ''">
+                and ACCESS_CHANNEL = #{accessChannel}
+            </if>
+        </where>
+    </select>
+
+    <!--新增所有列-->
+    <insert id="insert" keyProperty="applyNo" useGeneratedKeys="true">
+        insert into crs.trx_apply_info(APPLY_SOURCE, PROD_NO, PROD_SUB_NO, APPLY_STATUS, SYNDICATED_LOAN, CHANNAL_CODE,
+                                       APPLY_RESULT, APPLY_RESULT_DESC, ARTIFICIAL_FLAG, APPROVE_TYPE, APPROVE_RESULT,
+                                       AWORD_RESULT_CODE, MOBILE_PHONE_NO, CUST_NO, CUST_NAME, CUST_SEX, CUST_AGE,
+                                       MARITAL_STATUS, HOUSE_SITUATION, BANK_CARD_TYPE, BANK_CARD_NO, ID_TYPE, ID_NO,
+                                       FIRST_ID_PROVINCE_CODE, FIRST_ID_PROVINCE, FIRST_ID_CITY_CODE, FIRST_ID_CITY,
+                                       ID_FRONT_IMG_URL, ID_BACK_IMG_URL, LIVING_IMGURL_ONE, DEGREE, SCHOOL_NAME,
+                                       MAJOR_NAME, REMARK, TOKEN, CREATE_DATE, CREATE_TIME, UPDATE_DATE, UPDATE_TIME,
+                                       VERSION, ARTIFICIAL_DATE, ARTIFICIAL_TIME, AWORD_RESULT, RISK_PRICING, CASE_TYPE,
+                                       APPLY_RANDOM_NO, PIID, QUEUE_DATE, QUEUE_TIME, PROMOTION_CHANNEL, APPLY_ID,
+                                       MANUAL_CAUSE_CODE, IMAGE_ENV, FINALRESULT_COMPANY, APPROVE_COMPANY,
+                                       MANUAL_APPROVE_LEVEL, INTERVAL_DAYS, APPLY_TIME, ACCESS_CHANNEL)
+        values (#{applySource}, #{prodNo}, #{prodSubNo}, #{applyStatus}, #{syndicatedLoan}, #{channalCode},
+                #{applyResult}, #{applyResultDesc}, #{artificialFlag}, #{approveType}, #{approveResult},
+                #{awordResultCode}, #{mobilePhoneNo}, #{custNo}, #{custName}, #{custSex}, #{custAge}, #{maritalStatus},
+                #{houseSituation}, #{bankCardType}, #{bankCardNo}, #{idType}, #{idNo}, #{firstIdProvinceCode},
+                #{firstIdProvince}, #{firstIdCityCode}, #{firstIdCity}, #{idFrontImgUrl}, #{idBackImgUrl},
+                #{livingImgurlOne}, #{degree}, #{schoolName}, #{majorName}, #{remark}, #{token}, #{createDate},
+                #{createTime}, #{updateDate}, #{updateTime}, #{version}, #{artificialDate}, #{artificialTime},
+                #{awordResult}, #{riskPricing}, #{caseType}, #{applyRandomNo}, #{piid}, #{queueDate}, #{queueTime},
+                #{promotionChannel}, #{applyId}, #{manualCauseCode}, #{imageEnv}, #{finalresultCompany},
+                #{approveCompany}, #{manualApproveLevel}, #{intervalDays}, #{applyTime}, #{accessChannel})
+    </insert>
+
+    <!--通过主键修改数据-->
+    <update id="update">
+        update crs.trx_apply_info
+        <set>
+            <if test="applySource != null and applySource != ''">
+                APPLY_SOURCE = #{applySource},
+            </if>
+            <if test="prodNo != null and prodNo != ''">
+                PROD_NO = #{prodNo},
+            </if>
+            <if test="prodSubNo != null and prodSubNo != ''">
+                PROD_SUB_NO = #{prodSubNo},
+            </if>
+            <if test="applyStatus != null and applyStatus != ''">
+                APPLY_STATUS = #{applyStatus},
+            </if>
+            <if test="syndicatedLoan != null and syndicatedLoan != ''">
+                SYNDICATED_LOAN = #{syndicatedLoan},
+            </if>
+            <if test="channalCode != null and channalCode != ''">
+                CHANNAL_CODE = #{channalCode},
+            </if>
+            <if test="applyResult != null and applyResult != ''">
+                APPLY_RESULT = #{applyResult},
+            </if>
+            <if test="applyResultDesc != null and applyResultDesc != ''">
+                APPLY_RESULT_DESC = #{applyResultDesc},
+            </if>
+            <if test="artificialFlag != null and artificialFlag != ''">
+                ARTIFICIAL_FLAG = #{artificialFlag},
+            </if>
+            <if test="approveType != null and approveType != ''">
+                APPROVE_TYPE = #{approveType},
+            </if>
+            <if test="approveResult != null and approveResult != ''">
+                APPROVE_RESULT = #{approveResult},
+            </if>
+            <if test="awordResultCode != null and awordResultCode != ''">
+                AWORD_RESULT_CODE = #{awordResultCode},
+            </if>
+            <if test="mobilePhoneNo != null and mobilePhoneNo != ''">
+                MOBILE_PHONE_NO = #{mobilePhoneNo},
+            </if>
+            <if test="custNo != null and custNo != ''">
+                CUST_NO = #{custNo},
+            </if>
+            <if test="custName != null and custName != ''">
+                CUST_NAME = #{custName},
+            </if>
+            <if test="custSex != null and custSex != ''">
+                CUST_SEX = #{custSex},
+            </if>
+            <if test="custAge != null and custAge != ''">
+                CUST_AGE = #{custAge},
+            </if>
+            <if test="maritalStatus != null and maritalStatus != ''">
+                MARITAL_STATUS = #{maritalStatus},
+            </if>
+            <if test="houseSituation != null and houseSituation != ''">
+                HOUSE_SITUATION = #{houseSituation},
+            </if>
+            <if test="bankCardType != null and bankCardType != ''">
+                BANK_CARD_TYPE = #{bankCardType},
+            </if>
+            <if test="bankCardNo != null and bankCardNo != ''">
+                BANK_CARD_NO = #{bankCardNo},
+            </if>
+            <if test="idType != null and idType != ''">
+                ID_TYPE = #{idType},
+            </if>
+            <if test="idNo != null and idNo != ''">
+                ID_NO = #{idNo},
+            </if>
+            <if test="firstIdProvinceCode != null and firstIdProvinceCode != ''">
+                FIRST_ID_PROVINCE_CODE = #{firstIdProvinceCode},
+            </if>
+            <if test="firstIdProvince != null and firstIdProvince != ''">
+                FIRST_ID_PROVINCE = #{firstIdProvince},
+            </if>
+            <if test="firstIdCityCode != null and firstIdCityCode != ''">
+                FIRST_ID_CITY_CODE = #{firstIdCityCode},
+            </if>
+            <if test="firstIdCity != null and firstIdCity != ''">
+                FIRST_ID_CITY = #{firstIdCity},
+            </if>
+            <if test="idFrontImgUrl != null and idFrontImgUrl != ''">
+                ID_FRONT_IMG_URL = #{idFrontImgUrl},
+            </if>
+            <if test="idBackImgUrl != null and idBackImgUrl != ''">
+                ID_BACK_IMG_URL = #{idBackImgUrl},
+            </if>
+            <if test="livingImgurlOne != null and livingImgurlOne != ''">
+                LIVING_IMGURL_ONE = #{livingImgurlOne},
+            </if>
+            <if test="degree != null and degree != ''">
+                DEGREE = #{degree},
+            </if>
+            <if test="schoolName != null and schoolName != ''">
+                SCHOOL_NAME = #{schoolName},
+            </if>
+            <if test="majorName != null and majorName != ''">
+                MAJOR_NAME = #{majorName},
+            </if>
+            <if test="remark != null and remark != ''">
+                REMARK = #{remark},
+            </if>
+            <if test="token != null and token != ''">
+                TOKEN = #{token},
+            </if>
+            <if test="createDate != null">
+                CREATE_DATE = #{createDate},
+            </if>
+            <if test="createTime != null and createTime != ''">
+                CREATE_TIME = #{createTime},
+            </if>
+            <if test="updateDate != null">
+                UPDATE_DATE = #{updateDate},
+            </if>
+            <if test="updateTime != null and updateTime != ''">
+                UPDATE_TIME = #{updateTime},
+            </if>
+            <if test="version != null">
+                VERSION = #{version},
+            </if>
+            <if test="artificialDate != null">
+                ARTIFICIAL_DATE = #{artificialDate},
+            </if>
+            <if test="artificialTime != null and artificialTime != ''">
+                ARTIFICIAL_TIME = #{artificialTime},
+            </if>
+            <if test="awordResult != null and awordResult != ''">
+                AWORD_RESULT = #{awordResult},
+            </if>
+            <if test="riskPricing != null and riskPricing != ''">
+                RISK_PRICING = #{riskPricing},
+            </if>
+            <if test="caseType != null and caseType != ''">
+                CASE_TYPE = #{caseType},
+            </if>
+            <if test="applyRandomNo != null and applyRandomNo != ''">
+                APPLY_RANDOM_NO = #{applyRandomNo},
+            </if>
+            <if test="piid != null and piid != ''">
+                PIID = #{piid},
+            </if>
+            <if test="queueDate != null">
+                QUEUE_DATE = #{queueDate},
+            </if>
+            <if test="queueTime != null and queueTime != ''">
+                QUEUE_TIME = #{queueTime},
+            </if>
+            <if test="promotionChannel != null and promotionChannel != ''">
+                PROMOTION_CHANNEL = #{promotionChannel},
+            </if>
+            <if test="applyId != null and applyId != ''">
+                APPLY_ID = #{applyId},
+            </if>
+            <if test="manualCauseCode != null and manualCauseCode != ''">
+                MANUAL_CAUSE_CODE = #{manualCauseCode},
+            </if>
+            <if test="imageEnv != null and imageEnv != ''">
+                IMAGE_ENV = #{imageEnv},
+            </if>
+            <if test="finalresultCompany != null and finalresultCompany != ''">
+                FINALRESULT_COMPANY = #{finalresultCompany},
+            </if>
+            <if test="approveCompany != null and approveCompany != ''">
+                APPROVE_COMPANY = #{approveCompany},
+            </if>
+            <if test="manualApproveLevel != null and manualApproveLevel != ''">
+                MANUAL_APPROVE_LEVEL = #{manualApproveLevel},
+            </if>
+            <if test="intervalDays != null">
+                INTERVAL_DAYS = #{intervalDays},
+            </if>
+            <if test="applyTime != null">
+                APPLY_TIME = #{applyTime},
+            </if>
+            <if test="accessChannel != null and accessChannel != ''">
+                ACCESS_CHANNEL = #{accessChannel},
+            </if>
+        </set>
+        where APPLY_NO = #{applyNo}
+    </update>
+
+    <!--通过主键删除-->
+    <delete id="deleteById">
+        delete
+        from crs.trx_apply_info
+        where APPLY_NO = #{applyNo}
+    </delete>
+
+</mapper>
