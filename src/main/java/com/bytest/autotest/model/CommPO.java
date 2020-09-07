@@ -1,5 +1,9 @@
 package com.bytest.autotest.model;
 
+
+import lombok.ToString;
+
+@ToString
 public class CommPO {
     private String encodg;
     private String invktm;

@@ -1,10 +1,14 @@
 package com.bytest.autotest.service.Impl;
 
 import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONObject;
 import com.bytest.autotest.innerService.UserInfoService;
 import com.bytest.autotest.innerService.VppVariableMethodMappingService;
 import com.bytest.autotest.innerService.VppVariableService;
+import com.bytest.autotest.model.B2bRequest;
+import com.bytest.autotest.model.RequestData;
 import com.bytest.autotest.service.Juziservice;
+import com.bytest.autotest.util.KeyUtil;
 import com.bytest.autotest.util.http.HttpClient4;
 import com.byxf.vpp.api.dto.ResponseRes;
 import lombok.extern.slf4j.Slf4j;
@@ -12,6 +16,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.context.SpringBootTest;
+import sun.security.krb5.internal.crypto.Aes128;
 
 import java.io.FileNotFoundException;
 import java.util.Map;
@@ -39,26 +44,31 @@ class JuziserviceImplTest {
     @Autowired
     Juziservice juziservice;
 
-    @Value(value = "http://172.16.2.217:8142/b2b-front/channel/channel")
+    @Value("${b2curl}")
     String url;
 
-    @Test
-    void test() throws FileNotFoundException {
-//        String result = "{\"returnMsg\":\"\",\"success\":true,\"resParams\":{\"custEnpName\":\"-9999\",\"custEnpCall\":\"-9999\",\"custEnpAddress\":\"-9999\"},\"reasonCode\":\"\",\"class\":\"com.byxf.vpp.api.dto.ResponseRes\"}";
-//        JSON.parseObject(result,ResponseRes.class);
-//
-//        ResponseRes responseRes = JSON.parseObject(result,ResponseRes.class);
-//        System.out.println(responseRes.getResParams());
-//
-//        Map<String,Object> map = responseRes.getResParams();
-//        for (Map.Entry<String,Object> entry:map.entrySet()){
-//            if(entry.getValue().equals("-9999")||entry.getValue().equals("1900-01-01")||entry.getValue().equals("1900-01-01T00:00:00.000")){
-//
-//            }
-//        }
+    @Value("${chanel_aes_key}")
+    String AES;
 
-       String resultRES= HttpClient4.doPost("http://172.16.2.217:8142/b2b-front/channel/channel",JSON.toJSONString(juziservice.builecredit()));
-        log.info(resultRES);
+    @Test
+    void test() throws Exception {
+
+        log.info("请求的地址为：{}",url);
+       // String req = JSON.toJSONString(juziservice.builecredit());
+
+        RequestData requestData = juziservice.builecredit();
+        log.info("请求的字符串为：{}",requestData);
+        //requestData.getData();
+        B2bRequest b2bRequest = new B2bRequest();
+        b2bRequest.setComm(requestData.getComm());
+        b2bRequest.setData(KeyUtil.encryptAES(JSON.toJSONString(requestData.getData()),AES));
+        log.info("最终的请求的字符串为：》》{}",b2bRequest);
+
+       String resultRES= HttpClient4.doPost(url,JSON.toJSONString(b2bRequest));
+        JSONObject JS = JSON.parseObject(resultRES);
+        String data = JS.get("data").toString();
+        String result = KeyUtil.decryptAES(data, AES);
+        log.info("返回结果为：》》{}，返回的data内容为：{}",resultRES,result);
     }
 
     @Test

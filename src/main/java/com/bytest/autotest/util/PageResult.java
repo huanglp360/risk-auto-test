@@ -32,7 +32,7 @@ public class PageResult implements Serializable {
      }
      * */
     public Integer total;
-    public List<UserInfo> rows;
+    public List<T> T;
 
     public Integer getTotle() {
         return total;
@@ -42,19 +42,19 @@ public class PageResult implements Serializable {
         this.total = totle;
     }
 
-    public List<UserInfo> getRows() {
-        return rows;
+    public List<T> getRows() {
+        return T;
     }
 
-    public void setRows(List<UserInfo> rows) {
-        this.rows = rows;
+    public void setRows(List<T> rows) {
+        this.T = T;
     }
 
     @Override
     public String toString() {
         return "PageResult{" +
                 "totle=" + total +
-                ", rows=" + rows +
+                ", rows=" + T +
                 '}';
     }
 }

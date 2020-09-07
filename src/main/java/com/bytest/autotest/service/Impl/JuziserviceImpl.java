@@ -60,12 +60,14 @@ public class JuziserviceImpl implements Juziservice {
         commPO.setChanltp("C-00");
         commPO.setTxncd("loanExamines");
         commPO.setEncodg("utf-8");
+        commPO.setNeedret("yes");
+        commPO.setOrdrno(String.valueOf(System.currentTimeMillis()));
 
         //data部分
         DataPO dataPO = new DataPO();
         dataPO.setProdSubNo("510001");
         dataPO.setMercName("fql_002");
-        dataPO.setMercName("12345678901234567890123456789012");
+        dataPO.setMercNo("12345678901234567890123456789012");
         dataPO.setCustName(userInfo.getName());
         dataPO.setIdType("01");
         dataPO.setIdNo(userInfo.getId_No());
@@ -166,9 +168,7 @@ public class JuziserviceImpl implements Juziservice {
 
         //没搞清楚是什么图片
         ImgNameList imgNameList3 = new ImgNameList();
-        imgNameList3.setImageUrl("" +
-                "" +
-                "");
+        imgNameList3.setImageUrl("http://172.16.2.209/bsmedia/test.pdf");
         imgNameList3.setImageType("06");
         imgNameList3.setTransportProtocol("01");
 
@@ -216,8 +216,9 @@ public class JuziserviceImpl implements Juziservice {
 
         //数据加密
         commPO.setSigntx(MD5.digest(JSONObject.toJSONString(dataPO)+"|"+md5_key));
-//        requestData.setComm(commPO);
+        requestData.setComm(commPO);
 //        try {
+//
 //            requestData.setData(KeyUtil.encryptAES(JSONObject.toJSONString(dataPO),aes_key));
 //        }catch (Exception e){
 //            e.printStackTrace();
