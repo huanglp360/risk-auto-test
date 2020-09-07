@@ -6,6 +6,7 @@ import com.bytest.autotest.domain.UserInfo;
 import com.bytest.autotest.enums.DateSourceType;
 import com.bytest.autotest.innerService.UserInfoService;
 import com.bytest.autotest.util.PageResult;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -18,6 +19,7 @@ import java.util.List;
  * @author : hh
  * @date : 2020-05-04 02:41
  **/
+@Slf4j
 @Service
 @DynamicSource(dasource = DateSourceType.autotest)
 public class UserInfoServiceImpl implements UserInfoService {
@@ -36,11 +38,11 @@ public class UserInfoServiceImpl implements UserInfoService {
             }
 
     @Override
-    public PageResult getPageResult(Integer page, Integer size) {
+    public PageResult getPageResult(Integer page, Integer size,String name,String id_no,String mobile) {
         PageResult pageResult = new PageResult();
         pageResult.setTotle(gettotal());
 
-        List list = userInfoDao.selectLimt((page-1)*size,size);
+        List list = userInfoDao.selectLimt((page-1)*size,size,name,id_no,mobile);
         pageResult.setRows(list);
         return pageResult;
     }
@@ -52,6 +54,7 @@ public class UserInfoServiceImpl implements UserInfoService {
 
     @Override
     public Integer Update(UserInfo info) {
+        log.info("开始更新数据：",info);
         return userInfoDao.updateByPrimaryKey(info);
     }
 

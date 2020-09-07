@@ -128,6 +128,19 @@
     -->
     select id, name, sex, clan, birth, address, id_no, mobile, bankcard, frontpath,backpath,huotipath, idcardeffectivity,
     policedepartment, isused, businessno,createdatetime, updatetime
-    from user_info limit #{page},#{size}
+    from user_info
+    <where>
+        1=1
+        <if test="name !=''">
+         and name=#{name}
+        </if>
+      <if test="id_No !=''">
+       and id_no=#{id_No}
+      </if>
+      <if test="mobile !=''">
+       and mobile=#{mobile}
+      </if>
+    </where>
+    limit #{page},#{size}
   </select>
 </mapper>

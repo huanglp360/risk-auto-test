@@ -21,7 +21,7 @@ public interface UserInfoDao {
 
     Integer gettotal();
 
-    List<UserInfo> selectLimt(@Param("page") Integer page, @Param("size") Integer size);
+    List<UserInfo> selectLimt(@Param("page") Integer page, @Param("size") Integer size,@Param("name") String name,@Param("id_No")String id_No,@Param("mobile")String mobile);
 
     int updateByPrimaryKey(UserInfo record);
 }

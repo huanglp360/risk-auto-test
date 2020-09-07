@@ -54,13 +54,13 @@ public class ThreeLoanController {
         String jsonObject = JSONObject.toJSONString(req);
         String data = RSAUntil.encrypt(jsonObject);
         String sign = RSAUntil.sign(data);
-        JSONObject reqjson = new JSONObject().fluentPut("sign", sign).fluentPut("data", data);//组长请求报文
-        String httpresult = HttpClient4.doPost(url,reqjson.toJSONString());//http请求
-        JSONObject resJson = JSONObject.parseObject(httpresult);//http返回数据转换json
+        JSONObject reqjson = new JSONObject().fluentPut("sign", sign).fluentPut("data", data);
+        String httpresult = HttpClient4.doPost(url,reqjson.toJSONString());
+        JSONObject resJson = JSONObject.parseObject(httpresult);
         log.info("获取到的http请求结果转换json={}",resJson.toJSONString());
 
 
-        String resultdata =resJson.getString("data");//获取data数据
+        String resultdata =resJson.getString("data");
 
         log.info("后太返回的数据为===={}",RSAUntil.decrypt(resultdata));
         return RSAUntil.decrypt(resultdata);

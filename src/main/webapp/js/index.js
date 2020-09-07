@@ -73,7 +73,18 @@ $(function () {
     });
 
 
+function searchdata(){
+    console.log('开始查询');
+    var username = $('#data_name').val();
+    var mobileno = $('#data_phone').val();
+    var idcardno = $('#data_idcard').val();
+    $('#dg').datagrid('load',{
+        "name":$.trim(username),
+        "id_No":$.trim(idcardno),
+        "mobile":$.trim(mobileno)
+    });
 
+}
 
 
 function getpreurl() {

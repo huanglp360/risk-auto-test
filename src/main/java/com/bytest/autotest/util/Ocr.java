@@ -18,7 +18,7 @@ public class Ocr {
     public static UserInfo read(String path, String id_side) throws IOException {
         // 传入可选参数调用接口
         HashMap<String, String> options = new HashMap<String, String>();
-        options.put("detect_direction", "true");//检测身份证朝向true检测，flase 不检测
+        options.put("detect_direction", "true");//检测身份证朝向true检测， 不检测
         options.put("detect_risk", "false");//是否开启身份证风险类型(身份证复印件、临时身份证、身份证翻拍、修改过的身份证)功能，默认不开启，即：false。可选值:true-开启；false-不开启
         //String idCardSide = "front";//front：身份证含照片的一面；back：身份证带国徽的一面
 

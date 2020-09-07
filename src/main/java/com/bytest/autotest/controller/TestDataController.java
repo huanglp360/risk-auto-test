@@ -11,10 +11,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.File;
@@ -105,14 +102,27 @@ public class TestDataController {
     }
 
 
-    @PostMapping("list")
+    @RequestMapping(value = "list",method = {RequestMethod.GET,RequestMethod.POST})
     @ResponseBody
     public PageResult getdata(@RequestParam(value = "page", defaultValue = "1") String page,
-                              @RequestParam(value = "rows", defaultValue = "10") String size) {
-        PageResult pageResult = userInfoService.getPageResult(Integer.parseInt(page), Integer.parseInt(size));
+                              @RequestParam(value = "rows", defaultValue = "10") String size,
+                              @RequestParam(value = "name",defaultValue = "")String name,
+                              @RequestParam(value = "id_No",defaultValue = "")String id_No,
+                              @RequestParam(value = "mobile",defaultValue = "")String mobile) {
+        log.info("获取到的请求对象name={},id_No={},mobile={}",name,id_No,mobile);
+        PageResult pageResult = userInfoService.getPageResult(Integer.parseInt(page), Integer.parseInt(size),name,id_No,mobile);
         log.info("返回的数据：{}", pageResult);
         return pageResult;
 
     }
+
+    @RequestMapping(value = "updateuser",method = {RequestMethod.GET,RequestMethod.POST})
+    @ResponseBody
+    public Boolean updateuser(UserInfo userInfo){
+        log.info("接收到的数据为：{}",userInfo);
+        userInfoService.Update(userInfo);
+        return true;
+    }
+
 
 }

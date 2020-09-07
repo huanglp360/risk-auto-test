@@ -166,7 +166,9 @@ public class JuziserviceImpl implements Juziservice {
 
         //没搞清楚是什么图片
         ImgNameList imgNameList3 = new ImgNameList();
-        imgNameList3.setImageUrl("http://172.16.2.209/bsmedia/test.pdf");
+        imgNameList3.setImageUrl("" +
+                "" +
+                "");
         imgNameList3.setImageType("06");
         imgNameList3.setTransportProtocol("01");
 

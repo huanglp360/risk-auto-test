@@ -18,7 +18,7 @@ public interface UserInfoService {
 
     public Integer gettotal();
     public List<UserInfo> getall();
-    public PageResult getPageResult(Integer page,Integer size);
+    public PageResult getPageResult(Integer page,Integer size,String name,String id_no,String mobile);
     public UserInfo getUserNoused();
     public Integer Update(UserInfo userInfo);
     public Integer inSert(UserInfo userInfo);
