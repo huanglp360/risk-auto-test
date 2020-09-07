@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bytest.autotest.dao.ProcessingMappingDao">
+
+    <resultMap type="com.bytest.autotest.domain.ProcessingMapping" id="ProcessingMappingMap">
+        <result property="requestId" column="request_id" jdbcType="VARCHAR"/>
+        <result property="processId" column="process_id" jdbcType="VARCHAR"/>
+        <result property="scanOrData" column="scan_or_data" jdbcType="VARCHAR"/>
+        <result property="variableCode" column="variable_code" jdbcType="VARCHAR"/>
+        <result property="variableId" column="variable_id" jdbcType="VARCHAR"/>
+        <result property="createdate" column="createdate" jdbcType="TIMESTAMP"/>
+        <result property="update" column="update" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <!--查询单个-->
+    <select id="queryById" resultMap="ProcessingMappingMap">
+        select request_id,
+               process_id,
+               scan_or_data,
+               variable_code,
+               variable_id,
+               createdate,
+        update
+        from auto_test_demo.processing_mapping
+        where request_id = #{requestId}
+    </select>
+
+    <!--查询指定行数据-->
+    <select id="queryAllByLimit" resultMap="ProcessingMappingMap">
+        select request_id,
+               process_id,
+               scan_or_data,
+               variable_code,
+               variable_id,
+               createdate,
+        update
+        from auto_test_demo.processing_mapping
+        limit #{offset}, #{limit}
+    </select>
+
+    <!--通过实体作为筛选条件查询-->
+    <select id="queryAll" resultMap="ProcessingMappingMap">
+        select
+        request_id, process_id, scan_or_data, variable_code, variable_id, createdate, update
+        from auto_test_demo.processing_mapping
+        <where>
+            <if test="requestId != null and requestId != ''">
+                and request_id = #{requestId}
+            </if>
+            <if test="processId != null and processId != ''">
+                and process_id = #{processId}
+            </if>
+            <if test="scanOrData != null and scanOrData != ''">
+                and scan_or_data = #{scanOrData}
+            </if>
+            <if test="variableCode != null and variableCode != ''">
+                and variable_code = #{variableCode}
+            </if>
+            <if test="variableId != null and variableId != ''">
+                and variable_id = #{variableId}
+            </if>
+            <if test="createdate != null">
+                and createdate = #{createdate}
+            </if>
+            <if test="update != null">
+                and update = #{update}
+            </if>
+        </where>
+    </select>
+
+    <!--新增所有列-->
+    <insert id="insert" keyProperty="requestId" useGeneratedKeys="true">
+        insert into auto_test_demo.processing_mapping(process_id, scan_or_data, variable_code, variable_id, createdate,
+                                                      update)
+        values (#{processId}, #{scanOrData}, #{variableCode}, #{variableId}, #{createdate}, #{update})
+    </insert>
+
+    <!--通过主键修改数据-->
+    <update id="update">
+        update auto_test_demo.processing_mapping
+        <set>
+            <if test="processId != null and processId != ''">
+                process_id = #{processId},
+            </if>
+            <if test="scanOrData != null and scanOrData != ''">
+                scan_or_data = #{scanOrData},
+            </if>
+            <if test="variableCode != null and variableCode != ''">
+                variable_code = #{variableCode},
+            </if>
+            <if test="variableId != null and variableId != ''">
+                variable_id = #{variableId},
+            </if>
+            <if test="createdate != null">
+                createdate = #{createdate},
+            </if>
+            <if test="update != null">
+                update = #{update},
+            </if>
+        </set>
+        where request_id = #{requestId}
+    </update>
+
+    <!--通过主键删除-->
+    <delete id="deleteById">
+        delete
+        from auto_test_demo.processing_mapping
+        where request_id = #{requestId}
+    </delete>
+
+</mapper>

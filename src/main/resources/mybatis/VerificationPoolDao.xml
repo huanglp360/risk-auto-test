@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bytest.autotest.dao.VerificationPoolDao">
+
+    <resultMap type="com.bytest.autotest.domain.VerificationPool" id="VerificationPoolMap">
+        <result property="requestId" column="request_id" jdbcType="VARCHAR"/>
+        <result property="variableCode" column="variable_code" jdbcType="VARCHAR"/>
+        <result property="variableId" column="variable_id" jdbcType="VARCHAR"/>
+        <result property="variableValue" column="variable_value" jdbcType="VARCHAR"/>
+        <result property="variableDataType" column="variable_data_type" jdbcType="VARCHAR"/>
+        <result property="defaultValue" column="default_value" jdbcType="VARCHAR"/>
+        <result property="channelInto" column="channel_into" jdbcType="VARCHAR"/>
+        <result property="procMapId" column="proc_map_id" jdbcType="INTEGER"/>
+        <result property="createDate" column="create_date" jdbcType="TIMESTAMP"/>
+        <result property="updateDate" column="update_date" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <!--查询单个-->
+    <select id="queryById" resultMap="VerificationPoolMap">
+        select request_id,
+               variable_code,
+               variable_id,
+               variable_value,
+               variable_data_type,
+               default_value,
+               channel_into,
+               proc_map_id,
+               create_date,
+               update_date
+        from auto_test_demo.verification_pool
+        where request_id = #{requestId}
+    </select>
+
+    <!--查询指定行数据-->
+    <select id="queryAllByLimit" resultMap="VerificationPoolMap">
+        select request_id,
+               variable_code,
+               variable_id,
+               variable_value,
+               variable_data_type,
+               default_value,
+               channel_into,
+               proc_map_id,
+               create_date,
+               update_date
+        from auto_test_demo.verification_pool
+        limit #{offset}, #{limit}
+    </select>
+
+    <!--通过实体作为筛选条件查询-->
+    <select id="queryAll" resultMap="VerificationPoolMap">
+        select
+        request_id, variable_code, variable_id, variable_value, variable_data_type, default_value, channel_into,
+        proc_map_id, create_date, update_date
+        from auto_test_demo.verification_pool
+        <where>
+            <if test="requestId != null and requestId != ''">
+                and request_id = #{requestId}
+            </if>
+            <if test="variableCode != null and variableCode != ''">
+                and variable_code = #{variableCode}
+            </if>
+            <if test="variableId != null and variableId != ''">
+                and variable_id = #{variableId}
+            </if>
+            <if test="variableValue != null and variableValue != ''">
+                and variable_value = #{variableValue}
+            </if>
+            <if test="variableDataType != null and variableDataType != ''">
+                and variable_data_type = #{variableDataType}
+            </if>
+            <if test="defaultValue != null and defaultValue != ''">
+                and default_value = #{defaultValue}
+            </if>
+            <if test="channelInto != null and channelInto != ''">
+                and channel_into = #{channelInto}
+            </if>
+            <if test="procMapId != null">
+                and proc_map_id = #{procMapId}
+            </if>
+            <if test="createDate != null">
+                and create_date = #{createDate}
+            </if>
+            <if test="updateDate != null">
+                and update_date = #{updateDate}
+            </if>
+        </where>
+    </select>
+
+    <!--新增所有列-->
+    <insert id="insert" keyProperty="requestId" useGeneratedKeys="true">
+        insert into auto_test_demo.verification_pool(variable_code, variable_id, variable_value, variable_data_type,
+                                                     default_value, channel_into, proc_map_id, create_date, update_date)
+        values (#{variableCode}, #{variableId}, #{variableValue}, #{variableDataType}, #{defaultValue}, #{channelInto},
+                #{procMapId}, #{createDate}, #{updateDate})
+    </insert>
+
+    <!--通过主键修改数据-->
+    <update id="update">
+        update auto_test_demo.verification_pool
+        <set>
+            <if test="variableCode != null and variableCode != ''">
+                variable_code = #{variableCode},
+            </if>
+            <if test="variableId != null and variableId != ''">
+                variable_id = #{variableId},
+            </if>
+            <if test="variableValue != null and variableValue != ''">
+                variable_value = #{variableValue},
+            </if>
+            <if test="variableDataType != null and variableDataType != ''">
+                variable_data_type = #{variableDataType},
+            </if>
+            <if test="defaultValue != null and defaultValue != ''">
+                default_value = #{defaultValue},
+            </if>
+            <if test="channelInto != null and channelInto != ''">
+                channel_into = #{channelInto},
+            </if>
+            <if test="procMapId != null">
+                proc_map_id = #{procMapId},
+            </if>
+            <if test="createDate != null">
+                create_date = #{createDate},
+            </if>
+            <if test="updateDate != null">
+                update_date = #{updateDate},
+            </if>
+        </set>
+        where request_id = #{requestId}
+    </update>
+
+    <!--通过主键删除-->
+    <delete id="deleteById">
+        delete
+        from auto_test_demo.verification_pool
+        where request_id = #{requestId}
+    </delete>
+
+</mapper>

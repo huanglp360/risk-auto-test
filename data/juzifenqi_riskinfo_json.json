@@ -1,0 +1,314 @@
+[{
+  "riskCode": "jzfq_loan",
+  "riskCodeValue": "875"
+
+},
+  {
+    "riskCode": "jzfq_loanTime",
+    "riskCodeValue": "2020-04-06 00:00:00.000"
+
+  },
+  {
+    "riskCode": "product_type",
+    "riskCodeValue": "JZ"
+
+  },
+  {
+    "riskCode": "jzfq_regTime",
+    "riskCodeValue": "2020-04-07 00:00:00.000"
+
+  },
+  {
+    "riskCode": "firstCreditTime",
+    "riskCodeValue": "2020-04-08 00:00:00.000"
+
+  },
+  {
+    "riskCode": "firstCreditLine",
+    "riskCodeValue": "20000"
+
+  },
+  {
+    "riskCode": "lastAdjustmentLimitTime",
+    "riskCodeValue": "2020-04-03 00:00:00.000"
+
+  },
+  {
+    "riskCode": "lastSecondLimit",
+    "riskCodeValue": "23455.00"
+
+  },
+  {
+    "riskCode": "isFirstLoan",
+    "riskCodeValue": "1"
+
+  },
+  {
+    "riskCode": "firstLoanTime",
+    "riskCodeValue": "2020-04-04 00:00:00.000"
+
+  },
+  {
+    "riskCode": "firstLoanAmount",
+    "riskCodeValue": "1888"
+
+  },
+  {
+    "riskCode": "lastLoadTime",
+    "riskCodeValue": "2020-04-02 00:00:00.000"
+
+  },
+  {
+    "riskCode": "lastLoadAmount",
+    "riskCodeValue": "1233"
+
+  },
+  {
+    "riskCode": "cumulativeLoanAmount",
+    "riskCodeValue": "5898"
+
+  },
+  {
+    "riskCode": "jzfq_loanGpsLat",
+    "riskCodeValue": "2020-04-01 00:00:00.000"
+
+  },
+  {
+    "riskCode": "jzfq_total_loanBal",
+    "riskCodeValue": "52090"
+
+  },
+  {
+    "riskCode": "jzfq_total_currWalletLine",
+    "riskCodeValue": "120098"
+
+  },
+  {
+    "riskCode": "jzfq_total_currCashLine",
+    "riskCodeValue": "37860"
+
+  },
+  {
+    "riskCode": "jzfq_total_mostOverDueDays",
+    "riskCodeValue": "67"
+
+  },
+  {
+    "riskCode": "jzfq_total_overDueTimes",
+    "riskCodeValue": "3"
+
+  },
+  {
+    "riskCode": "jzfq_total_OverDuePrincipal",
+    "riskCodeValue": "6784"
+
+  },
+  {
+    "riskCode": "jzfq_total_OverDueDays",
+    "riskCodeValue": "234"
+
+  },
+  {
+    "riskCode": "jzfq_total_ifFpd",
+    "riskCodeValue": "5"
+
+  },
+  {
+    "riskCode": "jzfq_total_currOverDueDays",
+    "riskCodeValue": "9898"
+
+  },
+  {
+    "riskCode": "jzfq_total_currOverDueTimes",
+    "riskCodeValue": "33"
+
+  },
+  {
+    "riskCode": "jzfq_total_currOverDuePrincipal",
+    "riskCodeValue": "3"
+
+  },
+  {
+    "riskCode": "last7dApplyNumPlatform",
+    "riskCodeValue": "56"
+
+  },
+  {
+    "riskCode": "last8dApplyFaNumPlatform",
+    "riskCodeValue": "7"
+
+  },
+  {
+    "riskCode": "last15dApplyNumPlatform",
+    "riskCodeValue": "78"
+
+  },
+  {
+    "riskCode": "last15dApplyFaNumPlatform",
+    "riskCodeValue": "45"
+  },
+  {
+    "riskCode": "last1mLoanNumPlatform",
+    "riskCodeValue": "178"
+
+  },
+  {
+    "riskCode": "last1mLoanFaNumPlatform",
+    "riskCodeValue": "155"
+
+  },
+  {
+    "riskCode": "last6mLoanNumPlatform",
+    "riskCodeValue": "56.09"
+
+  },
+  {
+    "riskCode": "last6mLoanFaNumPlatform",
+    "riskCodeValue": "56"
+
+  },
+  {
+    "riskCode": "jzfq_xj_firstLoanTime",
+    "riskCodeValue": "2020-04-08 00:00:00.000"
+
+  },
+  {
+    "riskCode": "jzfq_xj_loanBal",
+    "riskCodeValue": "343"
+
+  },
+  {
+    "riskCode": "jzfq_xj_currWalletLine",
+    "riskCodeValue": "23"
+
+  },
+  {
+    "riskCode": "jzfq_xj_currCashLine",
+    "riskCodeValue": "4.556"
+
+  },
+  {
+    "riskCode": "jzfq_xj_mostOverDueDays",
+    "riskCodeValue": "44"
+
+  },
+  {
+    "riskCode": "jzfq_xj_overDueTimes",
+    "riskCodeValue": "55"
+
+  },
+  {
+    "riskCode": "jzfq_xj_totalOverDuePrincipal",
+    "riskCodeValue": "0"
+
+  },
+  {
+    "riskCode": "jzfq_xj_totalOverDueDays",
+    "riskCodeValue": "45"
+
+  },
+  {
+    "riskCode": "jzfq_xj_ifFpd",
+    "riskCodeValue": "34"
+
+  },
+  {
+    "riskCode": "jzfq_xj_currOverDueDays",
+    "riskCodeValue": "234.560"
+
+  },
+  {
+    "riskCode": "jzfq_xj_currOverDueTimes",
+    "riskCodeValue": "34"
+
+  },
+  {
+    "riskCode": "jzfq_xj_currOverDuePrincipal",
+    "riskCodeValue": "4567.098"
+
+  },
+  {
+    "riskCode": "jzfq_xf_firstLoanTime",
+    "riskCodeValue": "2020-04-09 00:00:00.000"
+
+  },
+  {
+    "riskCode": "jzfq_xf_loanBal",
+    "riskCodeValue": "8888"
+
+  },
+  {
+    "riskCode": "jzfq_xf_currWalletLine",
+    "riskCodeValue": "7600"
+
+  },
+  {
+    "riskCode": "jzfq_xf_currCashLine",
+    "riskCodeValue": "34500"
+
+  },
+  {
+    "riskCode": "jzfq_xf_mostOverDueDays",
+    "riskCodeValue": "4.6"
+
+  },
+  {
+    "riskCode": "jzfq_xf_overDueTimes",
+    "riskCodeValue": "0"
+
+  },
+  {
+    "riskCode": "jzfq_xf_totalOverDuePrincipal",
+    "riskCodeValue": "0"
+
+  },
+  {
+    "riskCode": "jzfq_xf_totalOverDueDays",
+    "riskCodeValue": "0"
+
+  },
+  {
+    "riskCode": "jzfq_xf_ifFpd",
+    "riskCodeValue": "3"
+
+  },
+  {
+    "riskCode": "jzfq_xf_currOverDueDays",
+    "riskCodeValue": "0"
+
+  },
+  {
+    "riskCode": "jzfq_xf_currOverDueTimes",
+    "riskCodeValue": "00"
+
+  },
+  {
+    "riskCode": "jzfq_xf_currOverDuePrincipal",
+    "riskCodeValue": "0"
+
+  },
+  {
+    "riskCode": "fourElementsResult",
+    "riskCodeValue": "02"
+
+  },
+  {
+    "riskCode": "idNoAddressByOcr",
+    "riskCodeValue": "跨境电商发酒店房间"
+
+  },
+  {
+    "riskCode": "issuingAuthorityByOcr",
+    "riskCodeValue": "公安局"
+
+  },
+  {
+    "riskCode": "idNoTimeLimitByOcr",
+    "riskCodeValue": "2020-04-09-2030-04-09"
+
+  },
+  {
+    "riskCode": "fullAddress",
+    "riskCodeValue": "详细地址"
+  }
+]
