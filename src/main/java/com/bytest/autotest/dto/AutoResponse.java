@@ -12,5 +12,4 @@ import java.util.Map;
 public class AutoResponse {
     private Boolean flag;
     private Map<String,Object> ResMap;
-
 }

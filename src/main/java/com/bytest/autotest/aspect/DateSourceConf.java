@@ -32,6 +32,11 @@ public class DateSourceConf implements EnvironmentAware {
     @Autowired
     private Environment env;
 
+    @Override
+    public void setEnvironment(Environment environment) {
+        this.env = environment;
+    }
+
     @Bean(name = "vppDataSource")
     public DataSource vppDataSource() throws Exception {
         Properties per = new Properties();
@@ -202,8 +207,5 @@ public class DateSourceConf implements EnvironmentAware {
         return fb.getObject();
     }
 
-    @Override
-    public void setEnvironment(Environment environment) {
-        this.env = environment;
-    }
+
 }

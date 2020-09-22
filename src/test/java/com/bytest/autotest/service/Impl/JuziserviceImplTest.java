@@ -10,16 +10,11 @@ import com.bytest.autotest.model.RequestData;
 import com.bytest.autotest.service.Juziservice;
 import com.bytest.autotest.util.KeyUtil;
 import com.bytest.autotest.util.http.HttpClient4;
-import com.byxf.vpp.api.dto.ResponseRes;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.context.SpringBootTest;
-import sun.security.krb5.internal.crypto.Aes128;
-
-import java.io.FileNotFoundException;
-import java.util.Map;
 
 /**
  * <h3>risk-auto-test</h3>
@@ -50,7 +45,7 @@ class JuziserviceImplTest {
     @Value("${chanel_aes_key}")
     String AES;
 
-    @Test
+   // @Test
     void test() throws Exception {
 
         log.info("请求的地址为：{}",url);
@@ -71,7 +66,7 @@ class JuziserviceImplTest {
         log.info("返回结果为：》》{}，返回的data内容为：{}",resultRES,result);
     }
 
-    @Test
+   // @Test
     void testdao(){
         System.out.println("autotestDateSource:"+userInfoService.getUserNoused());
         System.out.println("vppDateSource:"+variableService.queryById("0011809060000020001"));

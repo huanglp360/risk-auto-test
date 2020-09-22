@@ -40,9 +40,10 @@ public class UserInfoServiceImpl implements UserInfoService {
     @Override
     public PageResult getPageResult(Integer page, Integer size,String name,String id_no,String mobile) {
         PageResult pageResult = new PageResult();
-        pageResult.setTotle(gettotal());
-
-        List list = userInfoDao.selectLimt((page-1)*size,size,name,id_no,mobile);
+       // pageResult.setTotle(gettotal());
+        pageResult.setTotal(gettotal());
+        List<UserInfo> list = userInfoDao.selectLimt((page-1)*size,size,name,id_no,mobile);
+        //pageResult.setRows(list);
         pageResult.setRows(list);
         return pageResult;
     }

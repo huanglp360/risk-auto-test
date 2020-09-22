@@ -29,7 +29,7 @@ public interface TrxApplyInfoDao {
      * @return 对象列表
      */
     List<TrxApplyInfo> queryAllByLimit(@Param("offset") int offset, @Param("limit") int limit);
-
+    List<TrxApplyInfo> queryNoFinish();
 
     /**
      * 通过实体作为筛选条件查询

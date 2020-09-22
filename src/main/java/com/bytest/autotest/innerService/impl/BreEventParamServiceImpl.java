@@ -5,12 +5,9 @@ import com.bytest.autotest.dao.BreEventParamDao;
 import com.bytest.autotest.domain.BreEventParam;
 import com.bytest.autotest.enums.DateSourceType;
 import com.bytest.autotest.innerService.BreEventParamService;
-import org.apache.commons.lang.time.DateUtils;
-import org.apache.commons.lang3.time.DateFormatUtils;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
-import java.util.Date;
 import java.util.List;
 
 /**

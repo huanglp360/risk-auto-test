@@ -6,6 +6,7 @@ import com.bytest.autotest.aspect.DynamicSource;
 import com.bytest.autotest.domain.UserInfo;
 import com.bytest.autotest.enums.DateSourceType;
 import com.bytest.autotest.innerService.UserInfoService;
+import com.bytest.autotest.model.B2bRequest;
 import com.bytest.autotest.model.CommPO;
 import com.bytest.autotest.model.RequestData;
 import com.bytest.autotest.model.juzifenqi.*;
@@ -232,7 +233,7 @@ public class JuziserviceImpl implements Juziservice {
         return requestData;
     }
 
-    public RequestData builecredit(RequestData is){
+    public B2bRequest builecredit(RequestData is){
         is.getComm().setSigntx(MD5.digest(JSONObject.toJSONString(is.getData())+"|"+md5_key));
 
         return null;

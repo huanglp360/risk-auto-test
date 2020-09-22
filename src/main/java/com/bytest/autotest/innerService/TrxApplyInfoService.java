@@ -3,6 +3,7 @@ package com.bytest.autotest.innerService;
 import com.bytest.autotest.domain.TrxApplyInfo;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * 授信申请表(TrxApplyInfo)表服务接口
@@ -20,6 +21,8 @@ public interface TrxApplyInfoService {
      */
     TrxApplyInfo queryById(String applyNo);
 
+
+
     /**
      * 查询多条数据
      *
@@ -28,6 +31,8 @@ public interface TrxApplyInfoService {
      * @return 对象列表
      */
     List<TrxApplyInfo> queryAllByLimit(int offset, int limit);
+
+    List<TrxApplyInfo> queryNoFinish(Map<String,String> map);
 
     /**
      * 新增数据

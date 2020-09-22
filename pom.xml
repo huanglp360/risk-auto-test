@@ -31,17 +31,28 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
-
         </dependency>
         <dependency>
             <groupId>org.mybatis.spring.boot</groupId>
             <artifactId>mybatis-spring-boot-starter</artifactId>
             <version>2.1.1</version>
+            <exclusions>
+                <exclusion>
+                    <artifactId>slf4j-api</artifactId>
+                    <groupId>org.slf4j</groupId>
+                </exclusion>
+            </exclusions>
 
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-mongodb</artifactId>
+            <exclusions>
+                <exclusion>
+                    <artifactId>slf4j-api</artifactId>
+                    <groupId>org.slf4j</groupId>
+                </exclusion>
+            </exclusions>
         </dependency>
 
         <dependency>
@@ -68,12 +79,28 @@
             <groupId>com.alibaba</groupId>
             <artifactId>druid-spring-boot-starter</artifactId>
             <version>1.1.0</version>
+            <exclusions>
+                <exclusion>
+                    <artifactId>druid</artifactId>
+                    <groupId>com.alibaba</groupId>
+                </exclusion>
+            </exclusions>
 
         </dependency>
         <dependency>
             <groupId>com.alibaba.boot</groupId>
             <artifactId>dubbo-spring-boot-starter</artifactId>
             <version>0.2.0</version>
+            <exclusions>
+                <exclusion>
+                    <artifactId>zookeeper</artifactId>
+                    <groupId>org.apache.zookeeper</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>curator-client</artifactId>
+                    <groupId>org.apache.curator</groupId>
+                </exclusion>
+            </exclusions>
 
         </dependency>
 
@@ -86,6 +113,12 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
+            <exclusions>
+                <exclusion>
+                    <artifactId>slf4j-api</artifactId>
+                    <groupId>org.slf4j</groupId>
+                </exclusion>
+            </exclusions>
 
 
         </dependency>
@@ -112,6 +145,7 @@
             <artifactId>druid</artifactId>
             <version>1.1.10</version>
         </dependency>
+
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
@@ -122,6 +156,16 @@
             <groupId>com.baidu.aip</groupId>
             <artifactId>java-sdk</artifactId>
             <version>4.12.0</version>
+            <exclusions>
+                <exclusion>
+                    <artifactId>slf4j-api</artifactId>
+                    <groupId>org.slf4j</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>slf4j-simple</artifactId>
+                    <groupId>org.slf4j</groupId>
+                </exclusion>
+            </exclusions>
 
         </dependency>
         <!--支持JSP依赖-->
@@ -171,12 +215,24 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-redis</artifactId>
+            <exclusions>
+                <exclusion>
+                    <artifactId>slf4j-api</artifactId>
+                    <groupId>org.slf4j</groupId>
+                </exclusion>
+            </exclusions>
 
         </dependency>
 
         <dependency>
             <groupId>redis.clients</groupId>
             <artifactId>jedis</artifactId>
+            <exclusions>
+                <exclusion>
+                    <artifactId>slf4j-api</artifactId>
+                    <groupId>org.slf4j</groupId>
+                </exclusion>
+            </exclusions>
 
             <!--            <version>2.7.3</version>-->
         </dependency>
@@ -204,28 +260,23 @@
 <!--            <version>2.5.0.RELEASE</version>-->
 
 <!--        </dependency>-->
-        <dependency>
-            <groupId>com.byxf.vpp</groupId>
-            <artifactId>vpp-api</artifactId>
-            <version>0.1.4-h5-SNAPSHOT</version>
-        </dependency>
-        <dependency>
-            <groupId>com.byxf.risk-front</groupId>
-            <artifactId>risk-front-api</artifactId>
-            <version>0.0.1.2-queryCreditResult-SNAPSHOT</version>
-        </dependency>
-        <dependency>
-            <groupId>com.bsb.ics</groupId>
-            <artifactId>ics-api</artifactId>
-            <version>0.0.7-SNAPSHOT</version>
-        </dependency>
+
+
+
+<!--&lt;!&ndash;        工具包&ndash;&gt;-->
+<!--        &lt;!&ndash; https://mvnrepository.com/artifact/cn.hutool/hutool-all &ndash;&gt;-->
 <!--        <dependency>-->
-<!--            <groupId>com.smy.framework</groupId>-->
-<!--            <artifactId>smyframework-base</artifactId>-->
-<!--            <version>0.0.9-SNAPSHOT</version>-->
-
+<!--            <groupId>cn.hutool</groupId>-->
+<!--            <artifactId>hutool-all</artifactId>-->
+<!--            <version>5.4.2</version>-->
 <!--        </dependency>-->
-
+<!--&lt;!&ndash;        sftp相关上传图片&ndash;&gt;-->
+<!--        &lt;!&ndash; https://mvnrepository.com/artifact/com.jcraft/jsch &ndash;&gt;-->
+<!--        <dependency>-->
+<!--            <groupId>com.jcraft</groupId>-->
+<!--            <artifactId>jsch</artifactId>-->
+<!--            <version>0.1.55</version>-->
+<!--        </dependency>-->
 
     </dependencies>
 

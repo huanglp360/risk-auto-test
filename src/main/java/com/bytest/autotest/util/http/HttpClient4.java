@@ -22,6 +22,7 @@ import java.io.IOException;
  * @date : 2020-03-19 21:05
  **/
 public class HttpClient4 {
+
     public static String doGet(String url){
         CloseableHttpClient httpClient =null;
         CloseableHttpResponse response = null;
@@ -140,5 +141,7 @@ public class HttpClient4 {
         }
         return result;
     }
+
+
 
 }

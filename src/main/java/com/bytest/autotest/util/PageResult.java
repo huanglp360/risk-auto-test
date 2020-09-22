@@ -2,7 +2,6 @@ package com.bytest.autotest.util;
 
 import com.bytest.autotest.domain.UserInfo;
 import lombok.Data;
-import org.apache.poi.ss.formula.functions.T;
 
 import java.io.Serializable;
 import java.util.List;
@@ -14,8 +13,8 @@ import java.util.List;
  * @author : hh
  * @date : 2020-05-04 02:28
  **/
-
-public class PageResult implements Serializable {
+@Data
+public class PageResult<T> implements Serializable {
     /**
      * 分页返回
      *"data": {
@@ -32,29 +31,7 @@ public class PageResult implements Serializable {
      }
      * */
     public Integer total;
-    public List<T> T;
+    public List<T> rows;
 
-    public Integer getTotle() {
-        return total;
-    }
 
-    public void setTotle(Integer totle) {
-        this.total = totle;
-    }
-
-    public List<T> getRows() {
-        return T;
-    }
-
-    public void setRows(List<T> rows) {
-        this.T = T;
-    }
-
-    @Override
-    public String toString() {
-        return "PageResult{" +
-                "totle=" + total +
-                ", rows=" + T +
-                '}';
-    }
 }

@@ -170,7 +170,7 @@ public class RedisTool {
      * @param key
      * @return
      */
-    public Map<Object,Object> hmget(String key){
+    public Map<String,String> hmget(String key){
         return redisTemplate.opsForHash().entries(key);
     }
 
@@ -180,7 +180,7 @@ public class RedisTool {
      * @param map
      * @return
      */
-    public boolean hmset(String key,Map<String,Object> map){
+    public boolean hmset(String key,Map<String,String> map){
         try {
             redisTemplate.opsForHash().putAll(key,map);
             return true;

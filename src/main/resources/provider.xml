@@ -22,10 +22,12 @@
 
     <dubbo:application name="vpp-core"/>
     <!--<dubbo:reference id ="SysTagInfoService" interface="com.byxf.frs.service.SysTagInfoService" url="dubbo://172.16.2.212:29928"  />-->
-    <dubbo:reference id="SuperTestInterface" interface="com.byxf.vpp.api.service.SuperTestInterface"
-                     url="dubbo://172.16.2.217:29831" timeout="20000"/>
-    <dubbo:reference id="CreditService" interface="com.byxf.rfs.api.service.CreditService"
-                     url="dubbo://11.28.1.169:20829" timeout="20000"/>
+<!--    <dubbo:reference id="SuperTestInterface" interface="com.byxf.vpp.api.service.SuperTestInterface"-->
+<!--                     url="dubbo://172.16.2.217:29831" timeout="20000"/>-->
+<!--    <dubbo:reference id="CreditService" interface="com.byxf.rfs.api.service.CreditService"-->
+<!--                                                                                       url="dubbo://11.28.1.169:20829" timeout="20000"/>-->
+<!--    <dubbo:reference id="QueryManagerService" interface="com.smy.cts.service.QueryManagerService"-->
+<!--                     url="dubbo://172.16.2.217:29913" timeout="20000"/>-->
 
 <!--    <dubbo:reference id="SuperInterface" interface="com.byxf.vpp.core.flow.SuperInterface"-->
 <!--                     url="dubbo://11.28.2.137:29831"/>-->

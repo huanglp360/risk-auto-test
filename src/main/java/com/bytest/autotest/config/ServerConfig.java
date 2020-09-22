@@ -28,6 +28,16 @@ public class ServerConfig  implements ApplicationListener<WebServerInitializedEv
         }
         return "http://"+address.getHostAddress()+":"+this.serverPort+"/";
     }
+
+    public  String getLocalUrl(){
+        InetAddress address =null;
+        try {
+            address = InetAddress.getLocalHost();
+        } catch (UnknownHostException e) {
+            e.printStackTrace();
+        }
+        return "http://"+address.getHostAddress()+":";
+    }
     @Override
     public void onApplicationEvent(WebServerInitializedEvent event) {
         this.serverPort = event.getWebServer().getPort();

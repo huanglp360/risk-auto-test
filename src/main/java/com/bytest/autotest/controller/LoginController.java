@@ -1,6 +1,5 @@
 package com.bytest.autotest.controller;
 
-import com.bytest.autotest.innerService.EasyuiNavService;
 import com.bytest.autotest.innerService.TesterService;
 import com.bytest.autotest.util.DataUtils;
 import lombok.extern.slf4j.Slf4j;
@@ -28,8 +27,6 @@ public class LoginController {
     @Autowired
     TesterService testerService;
 
-    @Autowired
-    EasyuiNavService easyuiNavService;
 
     @GetMapping("/login")
     @ResponseBody

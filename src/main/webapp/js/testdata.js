@@ -104,7 +104,7 @@ function saveuser() {
             'id':$('#user_id').val(),
             'name':$('#user_name').val(),
         }
-    })
+    });
 }
 
 function searchdata(){

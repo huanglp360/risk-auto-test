@@ -1,8 +1,8 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.bytest.autotest.dao.TrxApplyInfoDao">
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 
-    <resultMap type="com.bytest.autotest.domain.TrxApplyInfo" id="TrxApplyInfoMap">
+<mapper namespace="com.bytest.autotest.dao.TrxApplyInfoDao">
+    <resultMap  id="TrxApplyInfoMap" type="com.bytest.autotest.domain.TrxApplyInfo">
         <result property="applyNo" column="APPLY_NO" jdbcType="VARCHAR"/>
         <result property="applySource" column="APPLY_SOURCE" jdbcType="VARCHAR"/>
         <result property="prodNo" column="PROD_NO" jdbcType="VARCHAR"/>
@@ -195,6 +195,73 @@
                ACCESS_CHANNEL
         from crs.trx_apply_info
         limit #{offset}, #{limit}
+    </select>
+
+
+
+    <select id="queryNoFinish" resultMap="TrxApplyInfoMap">
+        select APPLY_NO,
+               APPLY_SOURCE,
+               PROD_NO,
+               PROD_SUB_NO,
+               APPLY_STATUS,
+               SYNDICATED_LOAN,
+               CHANNAL_CODE,
+               APPLY_RESULT,
+               APPLY_RESULT_DESC,
+               ARTIFICIAL_FLAG,
+               APPROVE_TYPE,
+               APPROVE_RESULT,
+               AWORD_RESULT_CODE,
+               MOBILE_PHONE_NO,
+               CUST_NO,
+               CUST_NAME,
+               CUST_SEX,
+               CUST_AGE,
+               MARITAL_STATUS,
+               HOUSE_SITUATION,
+               BANK_CARD_TYPE,
+               BANK_CARD_NO,
+               ID_TYPE,
+               ID_NO,
+               FIRST_ID_PROVINCE_CODE,
+               FIRST_ID_PROVINCE,
+               FIRST_ID_CITY_CODE,
+               FIRST_ID_CITY,
+               ID_FRONT_IMG_URL,
+               ID_BACK_IMG_URL,
+               LIVING_IMGURL_ONE,
+               DEGREE,
+               SCHOOL_NAME,
+               MAJOR_NAME,
+               REMARK,
+               TOKEN,
+               CREATE_DATE,
+               CREATE_TIME,
+               UPDATE_DATE,
+               UPDATE_TIME,
+               VERSION,
+               ARTIFICIAL_DATE,
+               ARTIFICIAL_TIME,
+               AWORD_RESULT,
+               RISK_PRICING,
+               CASE_TYPE,
+               APPLY_RANDOM_NO,
+               PIID,
+               QUEUE_DATE,
+               QUEUE_TIME,
+               PROMOTION_CHANNEL,
+               APPLY_ID,
+               MANUAL_CAUSE_CODE,
+               IMAGE_ENV,
+               FINALRESULT_COMPANY,
+               APPROVE_COMPANY,
+               MANUAL_APPROVE_LEVEL,
+               INTERVAL_DAYS,
+               APPLY_TIME,
+               ACCESS_CHANNEL
+        from crs.trx_apply_info
+        where APPLY_STATUS != 100
     </select>
 
     <!--通过实体作为筛选条件查询-->

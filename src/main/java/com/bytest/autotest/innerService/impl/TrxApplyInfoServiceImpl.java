@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 import java.util.List;
+import java.util.Map;
 
 /**
  * 授信申请表(TrxApplyInfo)表服务实现类
@@ -16,8 +17,9 @@ import java.util.List;
  * @author makejava
  * @since 2020-08-27 10:11:22
  */
-@DynamicSource(dasource = DateSourceType.crs)
+
 @Service("trxApplyInfoService")
+@DynamicSource(dasource = DateSourceType.crs)
 public class TrxApplyInfoServiceImpl implements TrxApplyInfoService {
     @Resource
     private TrxApplyInfoDao trxApplyInfoDao;
@@ -43,6 +45,19 @@ public class TrxApplyInfoServiceImpl implements TrxApplyInfoService {
     @Override
     public List<TrxApplyInfo> queryAllByLimit(int offset, int limit) {
         return this.trxApplyInfoDao.queryAllByLimit(offset, limit);
+    }
+
+    @Override
+    public List<TrxApplyInfo> queryNoFinish(Map<String,String> map) {
+        List<TrxApplyInfo> list = null;
+        for (Map.Entry<String,String> entry:map.entrySet()) {
+
+           TrxApplyInfo tem = trxApplyInfoDao.queryById(entry.getKey());
+           if(!tem.getApplyStatus().equals("100") && !tem.getApplyResult().equals("Y")){
+               list.add(tem);
+           }
+        }
+        return list;
     }
 
     /**
