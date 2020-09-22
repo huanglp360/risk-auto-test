@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bytest.autotest.dao.SceneCasesPoolDao">
+
+    <resultMap type="com.bytest.autotest.domain.SceneCasesPool" id="SceneCasesPoolMap">
+        <result property="requestId" column="request_id" jdbcType="VARCHAR"/>
+        <result property="caseName" column="case_name" jdbcType="VARCHAR"/>
+        <result property="caseDesc" column="case_desc" jdbcType="VARCHAR"/>
+        <result property="prodSubNo" column="prod_sub_no" jdbcType="VARCHAR"/>
+        <result property="prodNo" column="prod_no" jdbcType="VARCHAR"/>
+        <result property="channelInto" column="channel_into" jdbcType="VARCHAR"/>
+        <result property="statusConf" column="status_conf" jdbcType="VARCHAR"/>
+        <result property="elementName" column="element_name" jdbcType="VARCHAR"/>
+        <result property="elementPhone" column="element_phone" jdbcType="VARCHAR"/>
+        <result property="elementBank" column="element_bank" jdbcType="VARCHAR"/>
+        <result property="elementIdcard" column="element_idcard" jdbcType="VARCHAR"/>
+        <result property="elementBankMobile" column="element_bank_mobile" jdbcType="VARCHAR"/>
+        <result property="testData" column="test_data" jdbcType="OTHER"/>
+        <result property="createdatetime" column="createdatetime" jdbcType="TIMESTAMP"/>
+        <result property="updatetime" column="updatetime" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <!--查询单个-->
+    <select id="queryById" resultMap="SceneCasesPoolMap">
+        select request_id,
+               case_name,
+               case_desc,
+               prod_sub_no,
+               prod_no,
+               channel_into,
+               status_conf,
+               element_name,
+               element_phone,
+               element_bank,
+               element_idcard,
+               element_bank_mobile,
+               test_data,
+               createdatetime,
+               updatetime
+        from autotest.scene_cases_pool
+        where request_id = #{requestId}
+    </select>
+
+    <!--查询指定行数据-->
+    <select id="queryAllByLimit" resultMap="SceneCasesPoolMap">
+        select request_id,
+               case_name,
+               case_desc,
+               prod_sub_no,
+               prod_no,
+               channel_into,
+               status_conf,
+               element_name,
+               element_phone,
+               element_bank,
+               element_idcard,
+               element_bank_mobile,
+               test_data,
+               createdatetime,
+               updatetime
+        from autotest.scene_cases_pool
+        limit #{offset}, #{limit}
+    </select>
+
+    <!--通过实体作为筛选条件查询-->
+    <select id="queryAll" resultMap="SceneCasesPoolMap">
+        select
+        request_id, case_name, case_desc, prod_sub_no, prod_no, channel_into, status_conf, element_name, element_phone,
+        element_bank, element_idcard, element_bank_mobile, test_data, createdatetime, updatetime
+        from autotest.scene_cases_pool
+        <where>
+            <if test="requestId != null and requestId != ''">
+                and request_id = #{requestId}
+            </if>
+            <if test="caseName != null and caseName != ''">
+                and case_name = #{caseName}
+            </if>
+            <if test="caseDesc != null and caseDesc != ''">
+                and case_desc = #{caseDesc}
+            </if>
+            <if test="prodSubNo != null and prodSubNo != ''">
+                and prod_sub_no = #{prodSubNo}
+            </if>
+            <if test="prodNo != null and prodNo != ''">
+                and prod_no = #{prodNo}
+            </if>
+            <if test="channelInto != null and channelInto != ''">
+                and channel_into = #{channelInto}
+            </if>
+            <if test="statusConf != null and statusConf != ''">
+                and status_conf = #{statusConf}
+            </if>
+            <if test="elementName != null and elementName != ''">
+                and element_name = #{elementName}
+            </if>
+            <if test="elementPhone != null and elementPhone != ''">
+                and element_phone = #{elementPhone}
+            </if>
+            <if test="elementBank != null and elementBank != ''">
+                and element_bank = #{elementBank}
+            </if>
+            <if test="elementIdcard != null and elementIdcard != ''">
+                and element_idcard = #{elementIdcard}
+            </if>
+            <if test="elementBankMobile != null and elementBankMobile != ''">
+                and element_bank_mobile = #{elementBankMobile}
+            </if>
+            <if test="testData != null">
+                and test_data = #{testData}
+            </if>
+            <if test="createdatetime != null">
+                and createdatetime = #{createdatetime}
+            </if>
+            <if test="updatetime != null">
+                and updatetime = #{updatetime}
+            </if>
+        </where>
+    </select>
+
+    <!--新增所有列-->
+    <insert id="insert" keyProperty="requestId" useGeneratedKeys="true">
+        insert into autotest.scene_cases_pool(case_name, case_desc, prod_sub_no, prod_no, channel_into, status_conf,
+                                              element_name, element_phone, element_bank, element_idcard,
+                                              element_bank_mobile, test_data, createdatetime, updatetime)
+        values (#{caseName}, #{caseDesc}, #{prodSubNo}, #{prodNo}, #{channelInto}, #{statusConf}, #{elementName},
+                #{elementPhone}, #{elementBank}, #{elementIdcard}, #{elementBankMobile}, #{testData}, #{createdatetime},
+                #{updatetime})
+    </insert>
+
+    <!--通过主键修改数据-->
+    <update id="update">
+        update autotest.scene_cases_pool
+        <set>
+            <if test="caseName != null and caseName != ''">
+                case_name = #{caseName},
+            </if>
+            <if test="caseDesc != null and caseDesc != ''">
+                case_desc = #{caseDesc},
+            </if>
+            <if test="prodSubNo != null and prodSubNo != ''">
+                prod_sub_no = #{prodSubNo},
+            </if>
+            <if test="prodNo != null and prodNo != ''">
+                prod_no = #{prodNo},
+            </if>
+            <if test="channelInto != null and channelInto != ''">
+                channel_into = #{channelInto},
+            </if>
+            <if test="statusConf != null and statusConf != ''">
+                status_conf = #{statusConf},
+            </if>
+            <if test="elementName != null and elementName != ''">
+                element_name = #{elementName},
+            </if>
+            <if test="elementPhone != null and elementPhone != ''">
+                element_phone = #{elementPhone},
+            </if>
+            <if test="elementBank != null and elementBank != ''">
+                element_bank = #{elementBank},
+            </if>
+            <if test="elementIdcard != null and elementIdcard != ''">
+                element_idcard = #{elementIdcard},
+            </if>
+            <if test="elementBankMobile != null and elementBankMobile != ''">
+                element_bank_mobile = #{elementBankMobile},
+            </if>
+            <if test="testData != null">
+                test_data = #{testData},
+            </if>
+            <if test="createdatetime != null">
+                createdatetime = #{createdatetime},
+            </if>
+            <if test="updatetime != null">
+                updatetime = #{updatetime},
+            </if>
+        </set>
+        where request_id = #{requestId}
+    </update>
+
+    <!--通过主键删除-->
+    <delete id="deleteById">
+        delete
+        from autotest.scene_cases_pool
+        where request_id = #{requestId}
+    </delete>
+
+</mapper>

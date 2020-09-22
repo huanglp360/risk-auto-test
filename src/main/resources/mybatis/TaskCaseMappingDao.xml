@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bytest.autotest.dao.TaskCaseMappingDao">
+
+    <resultMap type="com.bytest.autotest.domain.TaskCaseMapping" id="TaskCaseMappingMap">
+        <result property="requestId" column="request_id" jdbcType="VARCHAR"/>
+        <result property="taskId" column="task_id" jdbcType="VARCHAR"/>
+        <result property="caseId" column="case_id" jdbcType="VARCHAR"/>
+        <result property="eventType" column="event_type" jdbcType="VARCHAR"/>
+        <result property="prodSubNo" column="prod_sub_no" jdbcType="VARCHAR"/>
+        <result property="caseType" column="case_type" jdbcType="VARCHAR"/>
+        <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
+        <result property="updateTime" column="update_time" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <!--查询单个-->
+    <select id="queryById" resultMap="TaskCaseMappingMap">
+        select request_id,
+               task_id,
+               case_id,
+               event_type,
+               prod_sub_no,
+               case_type,
+               create_time,
+               update_time
+        from autotest.task_case_mapping
+        where request_id = #{requestId}
+    </select>
+
+    <select id="queryByTaskId" resultMap="TaskCaseMappingMap">
+        select request_id,
+               task_id,
+               case_id,
+               event_type,
+               prod_sub_no,
+               case_type,
+               create_time,
+               update_time
+        from autotest.task_case_mapping
+        where task_id = #{taskId}
+    </select>
+
+    <!--查询指定行数据-->
+    <select id="queryAllByLimit" resultMap="TaskCaseMappingMap">
+        select request_id,
+               task_id,
+               case_id,
+               event_type,
+               prod_sub_no,
+               case_type,
+               create_time,
+               update_time
+        from autotest.task_case_mapping
+        limit #{offset}, #{limit}
+    </select>
+
+    <!--通过实体作为筛选条件查询-->
+    <select id="queryAll" resultMap="TaskCaseMappingMap">
+        select
+        request_id, task_id, case_id, event_type, prod_sub_no, case_type, create_time, update_time
+        from autotest.task_case_mapping
+        <where>
+            <if test="requestId != null and requestId != ''">
+                and request_id = #{requestId}
+            </if>
+            <if test="taskId != null and taskId != ''">
+                and task_id = #{taskId}
+            </if>
+            <if test="caseId != null and caseId != ''">
+                and case_id = #{caseId}
+            </if>
+            <if test="eventType != null and eventType != ''">
+                and event_type = #{eventType}
+            </if>
+            <if test="prodSubNo != null and prodSubNo != ''">
+                and prod_sub_no = #{prodSubNo}
+            </if>
+            <if test="caseType != null and caseType != ''">
+                and case_type = #{caseType}
+            </if>
+            <if test="createTime != null">
+                and create_time = #{createTime}
+            </if>
+            <if test="updateTime != null">
+                and update_time = #{updateTime}
+            </if>
+        </where>
+    </select>
+
+    <!--新增所有列-->
+    <insert id="insert" keyProperty="requestId" useGeneratedKeys="true">
+        insert into autotest.task_case_mapping(task_id, case_id, event_type, prod_sub_no, case_type, create_time,
+                                               update_time)
+        values (#{taskId}, #{caseId}, #{eventType}, #{prodSubNo}, #{caseType}, #{createTime}, #{updateTime})
+    </insert>
+
+    <!--通过主键修改数据-->
+    <update id="update">
+        update autotest.task_case_mapping
+        <set>
+            <if test="taskId != null and taskId != ''">
+                task_id = #{taskId},
+            </if>
+            <if test="caseId != null and caseId != ''">
+                case_id = #{caseId},
+            </if>
+            <if test="eventType != null and eventType != ''">
+                event_type = #{eventType},
+            </if>
+            <if test="prodSubNo != null and prodSubNo != ''">
+                prod_sub_no = #{prodSubNo},
+            </if>
+            <if test="caseType != null and caseType != ''">
+                case_type = #{caseType},
+            </if>
+            <if test="createTime != null">
+                create_time = #{createTime},
+            </if>
+            <if test="updateTime != null">
+                update_time = #{updateTime},
+            </if>
+        </set>
+        where request_id = #{requestId}
+    </update>
+
+    <!--通过主键删除-->
+    <delete id="deleteById">
+        delete
+        from autotest.task_case_mapping
+        where request_id = #{requestId}
+    </delete>
+
+</mapper>
