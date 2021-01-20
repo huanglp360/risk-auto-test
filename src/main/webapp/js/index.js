@@ -6,7 +6,6 @@ $(function () {
 
         onClick : function (node) {
 
-
             if (node.url) {
 
                 if ($('#tabss').tabs('exists', node.text)) {
