@@ -16,6 +16,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import java.util.Map;
+
 /**
  * <h3>risk-auto-test</h3>
  * <p></p>
@@ -58,6 +60,7 @@ class JuziserviceImplTest {
         b2bRequest.setComm(requestData.getComm());
         b2bRequest.setData(KeyUtil.encryptAES(JSON.toJSONString(requestData.getData()),AES));
         log.info("最终的请求的字符串为：》》{}",b2bRequest);
+
 
        String resultRES= HttpClient4.doPost(url,JSON.toJSONString(b2bRequest));
         JSONObject JS = JSON.parseObject(resultRES);

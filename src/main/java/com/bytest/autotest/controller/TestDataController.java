@@ -120,6 +120,13 @@ public class TestDataController {
     @ResponseBody
     public Boolean updateuser(UserInfo userInfo){
         log.info("接收到的数据为：{}",userInfo);
+
+        Date date = new Date();
+        userInfo.setUpdatetime(date);
+
+        UserInfo tem_user = userInfoService.getUserById(userInfo.getId());
+        userInfo.setCreatedatetime(tem_user.getCreatedatetime());
+
         userInfoService.Update(userInfo);
         return true;
     }

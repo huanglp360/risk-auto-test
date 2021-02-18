@@ -32,7 +32,7 @@
 <%--</table>--
 action="/uploadzip"
 --%>
-<script type="text/javascript" src="<%=basePath%>/js/testdata.js"></script>
+
 <iframe name="frame1"  height="40" style="display: none"></iframe>
 <form id="upload" action="/uploadzip" method="post" enctype="multipart/form-data" target="frame1">
     <label>上传压缩包</label>
@@ -108,6 +108,10 @@ action="/uploadzip"
                 <div class="col-xs-4">
                     <input class="form-control " type="text" name="add_varCode" id="user_clan" maxlength="50" required="required">
                 </div>
+                <label class="col-xs-2 control-label">出生日期</label>
+                <div class="col-xs-4">
+                    <input class="form-control " type="text" name="add_varCode" id="user_birth" maxlength="50" required="required">
+                </div>
             </div>
             <div class="form-group">
                 <label class="col-xs-2 control-label">地址</label>
@@ -179,6 +183,6 @@ action="/uploadzip"
         </div>
     </div>
 </div>
-
+<script type="text/javascript" src="<%=basePath%>/js/testdata.js"></script>
 </body>
 </html>

@@ -9,6 +9,9 @@ import com.bytest.autotest.model.jdjtpt.RequestData;
 import com.bytest.autotest.util.http.HttpClient4;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.time.DateFormatUtils;
+import org.apache.jmeter.JMeter;
+import org.apache.jmeter.config.Argument;
+import org.apache.jmeter.testelement.TestPlan;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -78,6 +81,19 @@ public class Jtpt {
 //        log.info("获取到的路径地址：{}",path);
 
     }
+
+
+    @Test
+    void testjmeter(){
+        JMeter jMeter = new JMeter();
+        jMeter.start(new String[]{"12"});
+        TestPlan testPlan = new TestPlan();
+        Argument argument = new Argument();
+        String key = argument.getName();
+    }
+
+
+
 
 
 

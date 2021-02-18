@@ -17,6 +17,7 @@ import java.util.List;
 public interface UserInfoService {
 
     public Integer gettotal();
+    public UserInfo getUserById(Integer id);
     public List<UserInfo> getall();
     public PageResult getPageResult(Integer page,Integer size,String name,String id_no,String mobile);
     public UserInfo getUserNoused();

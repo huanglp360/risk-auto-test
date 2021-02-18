@@ -56,6 +56,7 @@ $(function () {
 
     });
 
+
 }
 
 
@@ -101,8 +102,23 @@ function saveuser() {
         type:'POST',
         datatype:'text',
         data:{
-            'id':$('#user_id').val(),
-            'name':$('#user_name').val(),
+            'id':$('#user_id').val().trim(),
+            'name':$('#user_name').val().trim(),
+            'sex':$('#user_sex').val().trim(),
+            'clan':$('#user_clan').val().trim(),
+            'birth':$('#user_birth').val().trim(),
+            'address':$('#user_addr').val().trim(),
+            'id_No':$('#user_idcard').val().trim(),
+            'mobile':$('#user_mobile').val().trim(),
+            'bankcard':$('#user_bankcard').val().trim(),
+            'frontpath':$('#user_frontpath').val().trim(),
+            'backpath':$('#user_backpath').val().trim(),
+            'huotipath':$('#user_huotipath').val().trim(),
+            'idcardeffectivity':$('#user_idcardeffectivity').val().trim(),
+            'policedepartment':$('#user_policedepartment').val().trim(),
+            'isused':$('#user_isused').val().trim(),
+            'businessno':$('#user_businessno').val().trim()
+
         }
     });
 }
@@ -168,16 +184,17 @@ Date.prototype.format = function (format) {
 }
 
 function uploadfile() {
+   // $.messager.progress();
     $('#upload').form({
         // url:getpreurl()+"/uploadzip",
         success:function(data){
 
             alert('上传成功');
             document.getElementById('in').value='';
+            $('#in').val();
         }
     });
-    //document.getElementById("in").value = "";
-   // document.getElementById('in')&&document.getElementById('in').reset();
+
 
 }
 
@@ -194,19 +211,3 @@ function getpreurl() {
     return prefix;
 }
 
-/**
- * @return {string}
- */
-// function DateTimeFormatter(value) {
-//     if (value == null || value === '') {
-//         return '';
-//     }
-//     var dt;
-//     if (value instanceof Date) {
-//         dt = value;
-//     } else {
-//         dt = new Date(value);
-//     }
-//
-//     return dt.format("yyyy-MM-dd hh:mm:ss");
-// }

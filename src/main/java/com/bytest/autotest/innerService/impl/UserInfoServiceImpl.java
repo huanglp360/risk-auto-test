@@ -33,6 +33,16 @@ public class UserInfoServiceImpl implements UserInfoService {
     }
 
     @Override
+    public UserInfo getUserById(Integer id) {
+        UserInfo userInfo =  userInfoDao.selectByPrimaryKey(id);
+        if (userInfo==null){
+            return null;
+        }
+        return userInfo;
+    }
+
+
+    @Override
     public List getall() {
         return userInfoDao.selectAll();
             }
