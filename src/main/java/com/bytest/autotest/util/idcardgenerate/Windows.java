@@ -118,11 +118,11 @@ public class Windows {
 	public String getExpDate() {
 		String exp = "";
 		List<String> list1 = new ArrayList<String>();
-		for (int i = 2002; i < 2010; i++) {
+		for (int i = 2010; i < 2020; i++) {
 			list1.add("" + i);
 		}
 		List<String> list2 = new ArrayList<String>();
-		for (int i = 2016; i < 2024; i++) {
+		for (int i = 2021; i < 2031; i++) {
 			list2.add("" + i);
 		}
 		exp += list1.get((int) (Math.random() * (list1.size() - 1) + 1));
@@ -328,7 +328,7 @@ public class Windows {
 			System.out.println("证件正面照【" + tagerDir + "idz" + num + ".jpg"
 					+ "】生成成功");
 			Thread.sleep(200);
-			bool = generateIdcodeF(wm, tagerDir + "idf" + num + ".jpg", str[2]);
+			bool = generateIdcodeF(wm, tagerDir + "idf" + num + ".jpg", str[2]+"公安局");
 		} catch (Exception e) {
 			e.printStackTrace();
 			bool = false;
@@ -496,8 +496,37 @@ public class Windows {
 		}
 		return dat;
 	}
-	
+	public static void generateIdcard(Integer num){
+
+		try {
+			Windows wm = new Windows();
+			//String url = wm.getClass().getResource("/idf.jpg").getPath();
+			String url = "";
+			ClassPathResource resource = new ClassPathResource("static/idcardimg/idf.jpg");
+			File file = resource.getFile();
+			url = file.getPath();
+			url = Util.StringDecode(url);
+			String baseDir = getJarDir(url.substring(0,url.length()-7));
+			baseDir = url.substring(0, url.length()-7);
+			createDir(baseDir + "images");
+			String newDir = baseDir + "idcode" + File.separator;
+			checkImage(wm, baseDir);
+
+			for (int i = 0; i < num; i++) {
+				generateIdcodeZ(baseDir, newDir, new Date().getTime());
+				System.out.println("生成第" + (i + 1) + "份成功完成........"
+						+ ((float) (i + 1) / (float) num) * 100 + "%");
+				Thread.sleep(100);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
 	public static void main(String[] args) {
+
+		generateIdcard(20);
+		System.exit(1);
+
 		try {
 			//help();
 			Scanner sc = new Scanner(System.in);
